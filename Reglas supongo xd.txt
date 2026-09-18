@@ -1,0 +1,4 @@
+1- Nadie trabaja en la misma escena
+2- Level Design se hace desde Prefab
+3- Trocear tareas (Uno hace la iluminación, los pickups o yo q se xd)
+4- YAML
