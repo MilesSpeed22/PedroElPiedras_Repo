@@ -1,12 +1,21 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
 
     public CharacterController playerController;
+    //movimiento
     public float speed = 5f;
+    private Vector2 inputMovement = Vector2.zero;
+    Vector3 moveDirection;
     Vector3 velocity;
     float gravity = -9.81f;
+    //Salto
+    public float jumpHeight = 2f;
+    private Vector3 verticalVelocity;
+    private bool jumpPressed = false;
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,7 +25,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovementTec();
+        Movimiento();
+
+        //MovementTec();
     }
     void MovementTec()
     {
@@ -34,7 +45,30 @@ public class Player : MonoBehaviour
         }
         velocity.y += gravity + Time.deltaTime;
         playerController.Move(velocity * Time.deltaTime);
+       
 
 
     }
+    public void OnMove(InputValue value)
+    {
+        inputMovement = value.Get<Vector2>();
+    }
+    
+    public void OnJump(InputValue value)
+    {
+        
+        
+        jumpPressed = value.isPressed;
+        
+    }
+
+    private void Movimiento()
+    {
+        moveDirection = transform.forward * inputMovement.y + transform.right * inputMovement.x;
+        playerController.Move(moveDirection * speed * Time.deltaTime);
+
+
+        
+    }
+
 }
