@@ -38,6 +38,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "d32fd56b-dca2-4e77-8c4a-6cebe613c7df",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "2D Vector",
                     "id": "3a00b21b-6ffc-40c4-9e64-eae2f1511fea",
                     "path": "2DVector",
@@ -91,6 +102,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "7705b8c4-1e32-4d0c-bca9-e36b318bcec5",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -106,6 +128,11 @@
                     "isOR": false
                 }
             ]
+        },
+        {
+            "name": "Mando",
+            "bindingGroup": "Mando",
+            "devices": []
         }
     ]
 }
