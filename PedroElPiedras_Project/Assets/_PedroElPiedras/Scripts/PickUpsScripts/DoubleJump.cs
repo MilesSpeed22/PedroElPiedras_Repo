@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class DoubleJump : MonoBehaviour
 {
-    public GameObject player;
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //player = GameObject.FindGameObjectWithTag("Player");
+        
       
     }
 
@@ -16,7 +16,7 @@ public class DoubleJump : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            player.GetComponent<PlayerController>().DoubleJump();
+            other.GetComponent<PlayerController>().DoubleJump();
             Destroy(gameObject);
         }
     }

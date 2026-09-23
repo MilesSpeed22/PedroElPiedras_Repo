@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 inputMovement = Vector2.zero;
     Vector3 moveDirection;
     Vector3 velocity;
-    float gravity = -9.81f;
     Vector2 moveInput;
     //Salto
     public float jumpHeight = 2f;
@@ -77,14 +76,7 @@ public class PlayerController : MonoBehaviour
 
                 rb.MoveRotation(Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime));
             }
-        if (!isGrounded)
-        {
-            
-        }
-        if(isGrounded)
-        {
-            speed = 5f;
-        }
+           
        
 
 
@@ -94,21 +86,16 @@ public class PlayerController : MonoBehaviour
         if (isGrounded || doubleJump)
         {
            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-            doubleJump = false;
-            
+            doubleJump = false; 
         }
+       
        
     }
     public void DoubleJump()
     {
         doubleJump = true;
-        //StartCoroutine(ResetDoubleJump());
+        
     }
-    IEnumerator ResetDoubleJump()
-    {
-
-        yield return new WaitForSeconds(0.5f);
-        doubleJump = false;
-    }
+    
 
 }
