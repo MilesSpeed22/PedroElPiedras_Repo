@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
     //movimiento
-    public float speed = 5f;
+    public float speed = 10f;
     public float rotationSpeed = 6f;
     private Vector2 inputMovement = Vector2.zero;
     Vector3 moveDirection;
@@ -20,6 +20,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] bool isGrounded;
     public bool doubleJump = false;
+    //Dash
+    public float dashSpeed = 20f;
+    public float timeDash;
+    public bool canDash = true;
+    //Platform
+    public GameObject PlatformManager;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -52,6 +58,20 @@ public class PlayerController : MonoBehaviour
         {
 
             Jump();
+        }
+    }
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Dash();
+        }
+    }
+    public void OnPlatform(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            PlatformManager.GetComponent<PlatformInvoque01>().InstPlatform();
         }
     }
 
@@ -96,6 +116,27 @@ public class PlayerController : MonoBehaviour
         doubleJump = true;
         
     }
-    
+
+    public void Dash()
+    {
+        if (canDash)
+        {
+            speed = dashSpeed;
+            StartCoroutine(DashCC());
+            canDash = false;
+            StartCoroutine(CanDashCC());
+        }
+        
+    }
+    IEnumerator DashCC()
+    {
+        yield return new WaitForSeconds(0.3f);
+        speed = 10f;
+    }    
+    IEnumerator CanDashCC()
+    {
+        yield return new WaitForSeconds(timeDash);
+        canDash = true;
+    }
 
 }
