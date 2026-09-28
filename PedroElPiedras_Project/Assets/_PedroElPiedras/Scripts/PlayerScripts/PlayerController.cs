@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour
     public bool canDash = true;
     //Platform
     public GameObject PlatformManager;
+
+    //Piedra
+    public GameObject piedra;
+    public Transform piedraPos;
+    public bool canPiedra = true;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -71,7 +76,14 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            PlatformManager.GetComponent<PlatformInvoque01>().InstPlatform();
+            PlatformManager.GetComponent<PlatformManager>().InstPlatform();
+        }
+    }
+    public void OnPiedra(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Piedra();
         }
     }
 
@@ -139,4 +151,18 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
+    public void Piedra()
+    {
+        if (canPiedra)
+        {
+            Instantiate(piedra, piedraPos.position, Quaternion.identity);
+            canPiedra = false;
+            StartCoroutine(CanPiedra());
+        }
+    }
+    IEnumerator CanPiedra()
+    {
+        yield return new WaitForSeconds(1f);
+        canPiedra = true;
+    }
 }
