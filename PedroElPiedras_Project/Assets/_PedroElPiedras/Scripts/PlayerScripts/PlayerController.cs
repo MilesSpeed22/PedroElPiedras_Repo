@@ -1,6 +1,8 @@
+using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
@@ -31,6 +33,15 @@ public class PlayerController : MonoBehaviour
     public GameObject piedra;
     public Transform piedraPos;
     public bool canPiedra = true;
+
+    //Respawn
+    //Disparo
+    public GameObject bullet;
+    public Transform bulletPos;
+    public List<GameObject> enemies = new List<GameObject>();
+    public GameObject enemyTarget;
+    bool canDisparar = true;
+    
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -84,6 +95,13 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             Piedra();
+        }
+    }
+    public void OnDisparo(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+           Disparo();
         }
     }
 
@@ -164,5 +182,63 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         canPiedra = true;
+    }
+
+    public void Disparo()
+    {
+        if(enemyTarget != null && canDisparar)
+        {
+            Instantiate(bullet, bulletPos.position, Quaternion.identity);
+            canDisparar = false;
+            StartCoroutine(DisparoCC());
+        }
+        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            enemies.Add(other.gameObject);
+            ActualizarObjetivos();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            enemies.Remove(other.gameObject);
+            ActualizarObjetivos();
+        }
+    }
+    private void ActualizarObjetivos()
+    {
+        if (enemies.Count == 0)
+        {
+            enemyTarget = null;
+            return;
+        }
+
+        float distanciaMasCorta = Mathf.Infinity;
+        GameObject enemigoMasCercano = null;
+
+        foreach (GameObject enemy in enemies)
+        {
+            if (enemy == null)
+                continue;
+            float distancia = Vector3.Distance(transform.position, enemy.transform.position);
+
+            if (distancia < distanciaMasCorta)
+            {
+                distanciaMasCorta = distancia;
+                enemigoMasCercano = enemy;
+            }
+        }
+        enemyTarget = enemigoMasCercano;
+    }
+    IEnumerator DisparoCC()
+    {
+        yield return new WaitForSeconds(1f);
+        canDisparar = true;
     }
 }
