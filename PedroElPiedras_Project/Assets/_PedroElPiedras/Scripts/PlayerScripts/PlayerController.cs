@@ -31,10 +31,14 @@ public class PlayerController : MonoBehaviour
 
     //Piedra
     public GameObject piedra;
+    private GameObject piedraInstanciada;
     public Transform piedraPos;
     public bool canPiedra = true;
+    public int numPiedra;
 
     //Respawn
+    public Transform[] respawn;
+    public int respawnNum = 0;
     //Disparo
     public GameObject bullet;
     public Transform bulletPos;
@@ -57,6 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             doubleJump = false;
         }
+       
 
     }
     private void FixedUpdate()
@@ -171,11 +176,20 @@ public class PlayerController : MonoBehaviour
 
     public void Piedra()
     {
-        if (canPiedra)
+        
+        
+        if (canPiedra && numPiedra <= 1)
         {
-            Instantiate(piedra, piedraPos.position, Quaternion.identity);
+            numPiedra++;
+            piedraInstanciada = Instantiate(piedra, piedraPos.position, Quaternion.identity);
             canPiedra = false;
             StartCoroutine(CanPiedra());
+           
+        }
+        if(numPiedra==2 && canPiedra)
+        {
+            numPiedra-=2;
+            Destroy(piedraInstanciada);
         }
     }
     IEnumerator CanPiedra()
@@ -183,6 +197,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         canPiedra = true;
     }
+  
 
     public void Disparo()
     {
@@ -209,6 +224,10 @@ public class PlayerController : MonoBehaviour
         {
             enemies.Remove(other.gameObject);
             ActualizarObjetivos();
+        }
+        if (other.CompareTag("Dead"))
+        {
+            transform.position = respawn[respawnNum].position;
         }
     }
     private void ActualizarObjetivos()

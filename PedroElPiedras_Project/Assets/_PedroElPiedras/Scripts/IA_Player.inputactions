@@ -207,8 +207,30 @@
                 },
                 {
                     "name": "",
+                    "id": "0b1985e8-cc6d-45f0-b602-97d82e1ff3bd",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Piedra",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "72d9c51e-d52f-42da-89ff-b6a6930b0c83",
                     "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Disparo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "16fcc72f-b2fb-40f0-bd88-3a2115442d20",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
