@@ -112,10 +112,19 @@ public class PlayerController : MonoBehaviour
 
     private void Movimiento()
     {
-        
-            Vector3 moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
+            Vector3 camForward = Camera.main.transform.forward;
+            Vector3 camRight = Camera.main.transform.right;
 
-            if (moveDirection.sqrMagnitude > 1f) moveDirection.Normalize();
+            camForward.y = 0f;
+            camRight.y = 0f;
+
+            camForward.Normalize();
+            camRight.Normalize();
+
+        Vector3 moveDirection = camForward* moveInput.y + camRight * moveInput.x;
+        //Vector3 moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
+
+        if (moveDirection.sqrMagnitude > 1f) moveDirection.Normalize();
 
             // Movimiento horizontal
             Vector3 velocity = rb.linearVelocity;
