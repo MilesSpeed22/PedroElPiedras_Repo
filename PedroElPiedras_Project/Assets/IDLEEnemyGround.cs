@@ -1,13 +1,21 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 
 public class IDLEEnemyGround : StateMachineBehaviour
 {
+    public GameObject EnemyGround;
     NavMeshAgent agent;
+    Animator anim;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        agent.speed = 10f;
+        anim = animator;
+        agent = EnemyGround.GetComponent<NavMeshAgent>();
+        agent.speed = 5f;
+        
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -33,4 +41,10 @@ public class IDLEEnemyGround : StateMachineBehaviour
     //{
     //    // Implement code that sets up animation IK (inverse kinematics)
     //}
+
+    IEnumerator AttackCC()
+    {
+        yield return new WaitForSeconds(5);
+        anim.SetBool("Attack", true);
+    }
 }
