@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool canDash = true;
     //Platform
     public GameObject PlatformManager;
+    
 
     //Piedra
     public GameObject piedra;

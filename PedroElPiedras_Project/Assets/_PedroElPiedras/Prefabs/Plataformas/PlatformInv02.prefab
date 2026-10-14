@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4360000844533378311}
   - component: {fileID: 3726860378527438571}
   - component: {fileID: 1118485315759019029}
+  - component: {fileID: 4239059914694880921}
   m_Layer: 3
   m_Name: PlatformInv02
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494499841944661209}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.72148347, z: -0, w: 0.69243175}
+  m_LocalRotation: {x: 0, y: -0.72148234, z: 0, w: 0.69243294}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 21.870571, y: 4.3941, z: 16.60548}
+  m_LocalScale: {x: 33.949688, y: 4.3941, z: 16.60548}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,3 +113,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4239059914694880921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494499841944661209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d9ef71ba4fa864895caf51d17d2b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformDestroy
+  numDestroy: 5
