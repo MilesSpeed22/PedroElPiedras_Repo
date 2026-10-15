@@ -2173,6 +2173,7 @@ Transform:
   - {fileID: 935788395}
   - {fileID: 1743401908}
   - {fileID: 840815472}
+  - {fileID: 1399424774}
   - {fileID: 763445501}
   - {fileID: 1784694235}
   - {fileID: 2041488524}
@@ -3404,7 +3405,7 @@ Transform:
   m_GameObject: {fileID: 840815471}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08697399, y: 0.13354848, z: 0.011766452, w: 0.9871484}
-  m_LocalPosition: {x: 141.8, y: -29.6, z: -125.4}
+  m_LocalPosition: {x: 136.5, y: -30.4, z: -128.3}
   m_LocalScale: {x: 8.816004, y: 10.175462, z: 10.131826}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5608,6 +5609,118 @@ Transform:
   - {fileID: 1923374959}
   m_Father: {fileID: 758022278}
   m_LocalEulerAnglesHint: {x: 0, y: 1.927, z: 0}
+--- !u!1 &1399424773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399424774}
+  - component: {fileID: 1399424777}
+  - component: {fileID: 1399424776}
+  - component: {fileID: 1399424775}
+  m_Layer: 3
+  m_Name: casa (20)
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1399424774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399424773}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.05281832, y: 0.127415, z: 0.09115856, w: 0.98623824}
+  m_LocalPosition: {x: 158, y: -34.9, z: -165.1}
+  m_LocalScale: {x: 8.816004, y: 10.175462, z: 10.131826}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 535640473}
+  m_LocalEulerAnglesHint: {x: 4.643, y: 15.178, z: 11.181}
+--- !u!65 &1399424775
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399424773}
+  m_Material: {fileID: 13400000, guid: fdefac95a99174d47ae71e795c69a8dd, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1399424776
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399424773}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d33a88100fd861a458fd2f0c5eede01c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1399424777
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399424773}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1420708403
 PrefabInstance:
   m_ObjectHideFlags: 0
