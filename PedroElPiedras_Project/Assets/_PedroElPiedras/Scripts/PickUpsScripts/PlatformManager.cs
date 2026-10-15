@@ -24,7 +24,9 @@ public class PlatformManager : MonoBehaviour
     {
         if (canInvoke)
         {
-            Instantiate(platformList[platformNum], platformPos[platPosformNum].position, Quaternion.identity);
+            platformList[platformNum].SetActive(true);
+            platformList[platformNum].GetComponent<PlatformDestroy>().DestroyPlatform();
+            //Instantiate(platformList[platformNum], platformPos[platPosformNum].position, Quaternion.identity);
         }
     }
 }

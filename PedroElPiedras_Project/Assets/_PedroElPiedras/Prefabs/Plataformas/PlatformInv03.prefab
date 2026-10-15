@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1118485315759019029}
   - component: {fileID: 4049035432583705483}
   m_Layer: 3
-  m_Name: PlatformInv02 1
+  m_Name: PlatformInv03
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494499841944661209}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09431311, y: -0.7152914, z: 0.0905157, w: 0.6864913}
+  m_LocalRotation: {x: -0.09431589, y: -0.715291, z: 0.0905184, w: 0.68649095}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 33.949688, y: 4.3941, z: 16.60548}
+  m_LocalScale: {x: 9.266966, y: 4.3941, z: 7.894742}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
