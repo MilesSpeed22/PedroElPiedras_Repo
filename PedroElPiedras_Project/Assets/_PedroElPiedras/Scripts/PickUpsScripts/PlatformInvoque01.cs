@@ -31,8 +31,17 @@ public class PlatformInvoque01 : MonoBehaviour
 
             platformManager.instanRef[numInstanRef].SetActive(true);
             platformManager.canInvoke = true;
+            
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            platformManager.canMove = true;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -40,6 +49,7 @@ public class PlatformInvoque01 : MonoBehaviour
         {
             platformManager.instanRef[numInstanRef].SetActive(false);
             platformManager.canInvoke = false;
+            platformManager.canMove = false;
         }
     }
 
