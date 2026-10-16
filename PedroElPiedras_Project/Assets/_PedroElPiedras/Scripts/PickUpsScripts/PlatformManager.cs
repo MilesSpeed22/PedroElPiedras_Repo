@@ -26,7 +26,7 @@ public class PlatformManager : MonoBehaviour
         {
             //platformList[platformNum].SetActive(true);
             //platformList[platformNum].GetComponent<PlatformDestroy>().DestroyPlatform();
-            //platformList[platformNum].GetComponent<PlatformMove>().IniciarMovimiento();
+            platformList[platformNum].GetComponent<MovimientoLerp>().IniciarMovimiento();
             //Instantiate(platformList[platformNum], platformPos[platPosformNum].position, Quaternion.identity);
         }
     }
