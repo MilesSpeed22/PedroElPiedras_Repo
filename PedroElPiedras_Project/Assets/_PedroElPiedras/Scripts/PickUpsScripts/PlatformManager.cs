@@ -7,12 +7,13 @@ public class PlatformManager : MonoBehaviour
     public Transform[] platformPos;
     public int platPosformNum;
     public bool canInvoke = false;
+    public bool canMove = true;
     public GameObject[] instanRef;
     public int numInstanRef;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        canMove = true;
     }
 
     // Update is called once per frame
@@ -22,12 +23,14 @@ public class PlatformManager : MonoBehaviour
     }
     public void InstPlatform()
     {
-        if (canInvoke)
+        if (canInvoke && canMove)
         {
             //platformList[platformNum].SetActive(true);
             //platformList[platformNum].GetComponent<PlatformDestroy>().DestroyPlatform();
             platformList[platformNum].GetComponent<MovimientoLerp>().IniciarMovimiento();
             //Instantiate(platformList[platformNum], platformPos[platPosformNum].position, Quaternion.identity);
+            canMove = false;
+            
         }
     }
 }

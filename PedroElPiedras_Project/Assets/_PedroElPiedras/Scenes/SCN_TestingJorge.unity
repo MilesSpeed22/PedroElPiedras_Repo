@@ -8253,7 +8253,9 @@ MonoBehaviour:
   puntoDestino: {fileID: 1747991882}
   rotacionFinal: {x: 0, y: -0.71, z: 0}
   duracion: 2
+  tiempoEspera: 3
   iniciarAutomaticamente: 1
+  manager: {fileID: 1269913972}
 --- !u!1 &1886394209
 GameObject:
   m_ObjectHideFlags: 0

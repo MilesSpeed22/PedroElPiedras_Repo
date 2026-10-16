@@ -1,4 +1,5 @@
 
+
 using UnityEngine;
 using System.Collections;
 
@@ -14,20 +15,18 @@ public class MovimientoLerp : MonoBehaviour
 
     [Header("Configuracion")]
     public float duracion = 2f;
-    public bool iniciarAutomaticamente = true;
+    public float tiempoEspera = 3f;
+    public bool iniciarAutomaticamente = false;
 
     private Quaternion rotacionInicial;
+    public PlatformManager manager;
 
     private void Start()
     {
         rotacionInicial = transform.rotation;
 
-        if (iniciarAutomaticamente)
-        {
-            //IniciarMovimiento();
-        }
     }
-    
+
     public void IniciarMovimiento()
     {
         if (puntoInicio == null ||
@@ -42,29 +41,55 @@ public class MovimientoLerp : MonoBehaviour
         }
 
         StopAllCoroutines();
-        StartCoroutine(MoverYRotar());
+        StartCoroutine(CicloMovimiento());
     }
 
-    private IEnumerator MoverYRotar()
+    private IEnumerator CicloMovimiento()
     {
-        float tiempo = 0f;
-
-        // Colocamos el objeto en el punto inicial
-        transform.position = puntoInicio.position;
+        rotacionInicial = transform.rotation;
 
         Quaternion destinoRotacion =
             Quaternion.Euler(rotacionFinal);
+
+        // Colocamos el objeto en el inicio
+        transform.position = puntoInicio.position;
+
+        // Ida
+        yield return StartCoroutine(MoverEntrePuntos(puntoInicio.position, puntoIntermedio.position, puntoDestino.position,rotacionInicial,destinoRotacion));
+
+        // Esperamos en el destino
+        yield return new WaitForSeconds(tiempoEspera);
+
+        // Vuelta: invertimos la curva
+        yield return StartCoroutine(
+            MoverEntrePuntos(
+                puntoDestino.position,
+                puntoIntermedio.position,
+                puntoInicio.position,
+                destinoRotacion,
+                rotacionInicial
+            )
+        );
+
+        //Tiempo volver a mover
+        yield return StartCoroutine(CanMove());
+    }
+
+    private IEnumerator MoverEntrePuntos(
+        Vector3 A,
+        Vector3 B,
+        Vector3 C,
+        Quaternion rotacionDesde,
+        Quaternion rotacionHasta)
+    {
+        float tiempo = 0f;
 
         while (tiempo < duracion)
         {
             float t = tiempo / duracion;
 
-            // Suavizar inicio y final
+            // Suavizamos el movimiento
             float tSuave = Mathf.SmoothStep(0f, 1f, t);
-
-            Vector3 A = puntoInicio.position;
-            Vector3 B = puntoIntermedio.position;
-            Vector3 C = puntoDestino.position;
 
             // Curva de Bezier cuadratica
             Vector3 posicion =
@@ -74,19 +99,28 @@ public class MovimientoLerp : MonoBehaviour
 
             transform.position = posicion;
 
-            // Rotacion suave
+            // Interpolamos la rotacion
             transform.rotation = Quaternion.Slerp(
-                rotacionInicial,
-                destinoRotacion,
+                rotacionDesde,
+                rotacionHasta,
                 tSuave
             );
 
             tiempo += Time.deltaTime;
             yield return null;
+
+            
         }
 
-        // Asegurar la posicion y rotacion finales
-        transform.position = puntoDestino.position;
-        transform.rotation = destinoRotacion;
+        // Ajustamos los valores finales exactos
+        transform.position = C;
+        transform.rotation = rotacionHasta;
+    }
+
+    IEnumerator CanMove()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        manager.canMove = true;
     }
 }
