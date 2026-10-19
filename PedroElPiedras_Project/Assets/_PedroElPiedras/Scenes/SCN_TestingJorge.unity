@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e349be8cf90f08a439dafb2c65757c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  speed: 15
+  speed: 18
   rotationSpeed: 9
   jumpHeight: 25
   groundCheck: {fileID: 1432303592}
@@ -991,6 +991,7 @@ MonoBehaviour:
   timeDash: 0.7
   canDash: 1
   PlatformManager: {fileID: 1269913971}
+  platformUnlock: 0
   piedra: {fileID: 8801152393988877179, guid: 5ccd5180b6ac37b41b52af530cc9b60c, type: 3}
   piedraPos: {fileID: 1777202305}
   canPiedra: 1
@@ -7275,7 +7276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5934eb309424c4b4fb083b4b922cc35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformUnlock
-  Platforms: {fileID: 1028640893}
 --- !u!1 &1493318492
 GameObject:
   m_ObjectHideFlags: 0
