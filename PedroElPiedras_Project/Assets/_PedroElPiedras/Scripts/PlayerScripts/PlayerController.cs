@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool canDash = true;
     //Platform
     public GameObject PlatformManager;
+    public bool platformUnlock;
     
 
     //Piedra
@@ -93,7 +94,11 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            PlatformManager.GetComponent<PlatformManager>().InstPlatform();
+            if(platformUnlock == true)
+            {
+                PlatformManager.GetComponent<PlatformManager>().InstPlatform();
+            }
+            
         }
     }
     public void OnPiedra(InputAction.CallbackContext context)

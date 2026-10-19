@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlatformInvoque01 : MonoBehaviour
 {
     public PlatformManager platformManager;
-
+    public PlayerController playerController;
     [SerializeField] private int platformNum;
     [SerializeField] private int platPosformNum;
     [SerializeField] private int numInstanRef;
@@ -26,7 +26,11 @@ public class PlatformInvoque01 : MonoBehaviour
             numInstanRef < platformManager.instanRef.Length &&
             platformManager.instanRef[numInstanRef] != null)
         {
-            platformManager.instanRef[numInstanRef].SetActive(true);
+            if(other.GetComponent<PlayerController>().platformUnlock == true)
+            {
+                platformManager.instanRef[numInstanRef].SetActive(true);
+            }
+            
         }
 
         platformManager.canInvoke = true;
