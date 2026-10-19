@@ -1,59 +1,60 @@
-using System.Collections;
-using Unity.VisualScripting;
+
 using UnityEngine;
-
-
 
 public class PlatformInvoque01 : MonoBehaviour
 {
-   
     public PlatformManager platformManager;
-    [SerializeField] int platformNum;
-    [SerializeField] int platPosformNum;
-    [SerializeField] int numInstanRef;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
-    {
-        
-    }
-    private void Update()
-    {
-        
-    }
- 
+
+    [SerializeField] private int platformNum;
+    [SerializeField] private int platPosformNum;
+    [SerializeField] private int numInstanRef;
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            platformManager.platformNum = platformNum;
-            platformManager.platPosformNum = platPosformNum;
-            platformManager.numInstanRef = numInstanRef;
+        if (!other.CompareTag("Player"))
+            return;
 
+        if (platformManager == null)
+            return;
+
+        platformManager.platformNum = platformNum;
+        platformManager.platPosformNum = platPosformNum;
+        platformManager.numInstanRef = numInstanRef;
+
+        if (platformManager.instanRef != null &&
+            numInstanRef >= 0 &&
+            numInstanRef < platformManager.instanRef.Length &&
+            platformManager.instanRef[numInstanRef] != null)
+        {
             platformManager.instanRef[numInstanRef].SetActive(true);
-            platformManager.canInvoke = true;
-            
         }
-        
+
+        platformManager.canInvoke = true;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            platformManager.canMove = true;
-        }
-    }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!other.CompareTag("Player"))
+            return;
+
+        if (platformManager == null)
+            return;
+
+        // Desactivamos solo la referencia de este objeto.
+        if (platformManager.instanRef != null &&
+            numInstanRef >= 0 &&
+            numInstanRef < platformManager.instanRef.Length &&
+            platformManager.instanRef[numInstanRef] != null)
         {
             platformManager.instanRef[numInstanRef].SetActive(false);
+        }
+
+        // No desactivar el poder si otro objeto ya es el seleccionado.
+        if (platformManager.platformNum == platformNum &&
+            platformManager.platPosformNum == platPosformNum &&
+            platformManager.numInstanRef == numInstanRef)
+        {
             platformManager.canInvoke = false;
-            platformManager.canMove = false;
         }
     }
-
-   
 }
-
-
