@@ -5154,6 +5154,8 @@ MonoBehaviour:
   tiempoEspera: 5
   iniciarAutomaticamente: 0
   manager: {fileID: 1269913972}
+  animator: {fileID: 0}
+  tiemblaTime: 0
   canMove: 1
   yaActivada: 0
 --- !u!1 &689077932
@@ -9074,6 +9076,8 @@ MonoBehaviour:
   tiempoEspera: 5
   iniciarAutomaticamente: 0
   manager: {fileID: 1269913972}
+  animator: {fileID: 0}
+  tiemblaTime: 0
   canMove: 1
   yaActivada: 0
 --- !u!1 &1308789916
@@ -12329,6 +12333,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -48.47
       objectReference: {fileID: 0}
+    - target: {fileID: 8279561633361648274, guid: d5cc992183334024ea0815460a8bc8cb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12336,6 +12344,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1494499841944661209, guid: d5cc992183334024ea0815460a8bc8cb, type: 3}
       insertIndex: 4
       addedObject: {fileID: 1864763146}
+    - targetCorrespondingSourceObject: {fileID: 1494499841944661209, guid: d5cc992183334024ea0815460a8bc8cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1864763151}
   m_SourcePrefab: {fileID: 100100000, guid: d5cc992183334024ea0815460a8bc8cb, type: 3}
 --- !u!4 &1864763144 stripped
 Transform:
@@ -12367,8 +12378,32 @@ MonoBehaviour:
   tiempoEspera: 10
   iniciarAutomaticamente: 1
   manager: {fileID: 1269913972}
+  animator: {fileID: 1864763151}
+  tiemblaTime: 8
   canMove: 1
   yaActivada: 0
+--- !u!95 &1864763151
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864763145}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d6494b26c19c0646861cec71b2f2786, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1886394209
 GameObject:
   m_ObjectHideFlags: 0
@@ -12690,6 +12725,8 @@ MonoBehaviour:
   tiempoEspera: 10
   iniciarAutomaticamente: 0
   manager: {fileID: 1269913972}
+  animator: {fileID: 0}
+  tiemblaTime: 0
   canMove: 1
   yaActivada: 0
 --- !u!1001 &1923374958
@@ -12794,6 +12831,8 @@ MonoBehaviour:
   tiempoEspera: 4
   iniciarAutomaticamente: 0
   manager: {fileID: 1269913972}
+  animator: {fileID: 0}
+  tiemblaTime: 0
   canMove: 1
   yaActivada: 0
 --- !u!1 &1926403174
@@ -13475,6 +13514,8 @@ MonoBehaviour:
   tiempoEspera: 4
   iniciarAutomaticamente: 0
   manager: {fileID: 1269913972}
+  animator: {fileID: 0}
+  tiemblaTime: 0
   canMove: 1
   yaActivada: 0
 --- !u!1 &2008570247
@@ -13841,6 +13882,8 @@ MonoBehaviour:
   tiempoEspera: 10
   iniciarAutomaticamente: 0
   manager: {fileID: 1269913972}
+  animator: {fileID: 0}
+  tiemblaTime: 0
   canMove: 1
   yaActivada: 0
 --- !u!1 &2121234631
@@ -13980,6 +14023,8 @@ MonoBehaviour:
   tiempoEspera: 10
   iniciarAutomaticamente: 0
   manager: {fileID: 1269913972}
+  animator: {fileID: 0}
+  tiemblaTime: 0
   canMove: 1
   yaActivada: 0
 --- !u!1 &2136195206

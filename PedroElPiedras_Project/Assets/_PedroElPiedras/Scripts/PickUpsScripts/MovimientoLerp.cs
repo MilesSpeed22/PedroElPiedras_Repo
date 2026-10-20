@@ -21,6 +21,8 @@ public class MovimientoLerp : MonoBehaviour
     private Quaternion rotacionInicial;
 
     public PlatformManager manager;
+    public Animator animator;
+    [SerializeField] private float tiemblaTime;
 
     [SerializeField] public bool canMove = true;
 
@@ -67,7 +69,7 @@ public class MovimientoLerp : MonoBehaviour
 
         // Colocamos la plataforma en el inicio.
         transform.position = puntoInicio.position;
-
+        
         // Ida: forma el puente.
         yield return StartCoroutine(
             MoverEntrePuntos(
@@ -82,6 +84,7 @@ public class MovimientoLerp : MonoBehaviour
         // Espera en el destino.
         yield return new WaitForSeconds(tiempoEspera);
 
+        
 
         // Vuelta: regresa al punto inicial.
         yield return StartCoroutine(
@@ -138,4 +141,10 @@ public class MovimientoLerp : MonoBehaviour
         transform.position = C;
         transform.rotation = rotacionHasta;
     }
+    IEnumerator Tiembla()
+    {
+        yield return new WaitForSeconds(tiemblaTime);
+        animator.SetBool("Tiembla", true);
+    }
+
 }
