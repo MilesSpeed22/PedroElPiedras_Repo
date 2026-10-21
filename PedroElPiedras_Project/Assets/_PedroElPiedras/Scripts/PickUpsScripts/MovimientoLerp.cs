@@ -21,8 +21,8 @@ public class MovimientoLerp : MonoBehaviour
     private Quaternion rotacionInicial;
 
     public PlatformManager manager;
-    public Animator animator;
-    [SerializeField] private float tiemblaTime;
+
+    private TemblorPlataforma temblor;
 
     [SerializeField] public bool canMove = true;
 
@@ -34,6 +34,8 @@ public class MovimientoLerp : MonoBehaviour
     private void Start()
     {
         rotacionInicial = transform.rotation;
+
+        temblor = GetComponent<TemblorPlataforma>();
     }
 
     public void IniciarMovimiento()
@@ -58,6 +60,11 @@ public class MovimientoLerp : MonoBehaviour
 
         StopAllCoroutines();
         StartCoroutine(CicloMovimiento());
+
+        if (temblor != null)
+        {
+            temblor.ActivarTemblor();
+        }
     }
 
     private IEnumerator CicloMovimiento()
@@ -141,10 +148,6 @@ public class MovimientoLerp : MonoBehaviour
         transform.position = C;
         transform.rotation = rotacionHasta;
     }
-    IEnumerator Tiembla()
-    {
-        yield return new WaitForSeconds(tiemblaTime);
-        animator.SetBool("Tiembla", true);
-    }
+  
 
 }
