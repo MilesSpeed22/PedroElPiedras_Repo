@@ -22,7 +22,7 @@ public class MovimientoLerp : MonoBehaviour
 
     public PlatformManager manager;
 
-    private TemblorPlataforma temblor;
+    private TemblorPlataforma[] temblor;
 
     [SerializeField] public bool canMove = true;
 
@@ -35,7 +35,7 @@ public class MovimientoLerp : MonoBehaviour
     {
         rotacionInicial = transform.rotation;
 
-        temblor = GetComponent<TemblorPlataforma>();
+        temblor = GetComponentsInChildren<TemblorPlataforma>();
     }
 
     public void IniciarMovimiento()
@@ -58,13 +58,21 @@ public class MovimientoLerp : MonoBehaviour
         yaActivada = true;
         canMove = false;
 
+         if (temblor != null)
+        {
+            foreach(TemblorPlataforma t in temblor) 
+            {
+                if (t != null) 
+                {
+                    t.ActivarTemblor();
+                }
+            }
+        }
+
         StopAllCoroutines();
         StartCoroutine(CicloMovimiento());
 
-        if (temblor != null)
-        {
-            temblor.ActivarTemblor();
-        }
+       
     }
 
     private IEnumerator CicloMovimiento()
