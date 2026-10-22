@@ -1689,7 +1689,7 @@ Transform:
   m_GameObject: {fileID: 212766614}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 295.3, y: -38.1, z: 138}
+  m_LocalPosition: {x: 0, y: 7.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2358,7 +2358,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23382978, y: -0.17118151, z: 0.04186199, w: 0.9561737}
-  m_LocalPosition: {x: 300.559, y: -30.21452, z: 123.78309}
+  m_LocalPosition: {x: 5.258994, y: 15.60548, z: -14.216908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2671,7 +2671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TemblorPlataforma
   tiempoReposo: 4
   duracionTemblor: 2
-  intensidadTemblor: 0.05
+  intensidadTemblor: 0.15
   velocidadTemblor: 25
 --- !u!1 &344366928
 GameObject:
@@ -9386,7 +9386,7 @@ Transform:
   m_GameObject: {fileID: 1308789916}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23382978, y: -0.17118151, z: 0.04186199, w: 0.9561737}
-  m_LocalPosition: {x: 300.559, y: -30.21452, z: 123.78309}
+  m_LocalPosition: {x: 5.258994, y: 15.60548, z: -14.216908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

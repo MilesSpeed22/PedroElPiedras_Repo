@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Piedra();
+            //Piedra();
         }
     }
     public void OnDisparo(InputAction.CallbackContext context)
