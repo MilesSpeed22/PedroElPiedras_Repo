@@ -259,6 +259,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Tutorial",
+            "id": "66735c53-9bbf-402a-b7fe-4577a2e7d030",
+            "actions": [
+                {
+                    "name": "Cerrar",
+                    "type": "Button",
+                    "id": "c278698f-4c13-4c1d-a229-f1d5aa073231",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ef49b4d1-a9ca-416d-b41a-98f555cfa451",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cerrar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

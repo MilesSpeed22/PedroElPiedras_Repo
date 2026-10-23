@@ -275,4 +275,8 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         canDisparar = true;
     }
+
+    //Tutoriales
+
+
 }
