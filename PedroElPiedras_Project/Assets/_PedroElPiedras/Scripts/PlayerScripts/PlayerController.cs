@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public PlayerInput playerInput;
     Rigidbody rb;
     //movimiento
     public float speed = 10f;
@@ -47,8 +47,11 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject enemyTarget;
     bool canDisparar = true;
-    
-   
+
+    //Tutoriales
+
+    public GameObject[] tutoriales;
+    public int tutoNum;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -278,5 +281,23 @@ public class PlayerController : MonoBehaviour
 
     //Tutoriales
 
+    public void OnCerrar(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            CerrarTutorial();
+        }
+    }
 
+    public void Tutorial()
+    {
+        tutoriales[tutoNum].SetActive(true);
+        playerInput.SwitchCurrentActionMap("Tutorial");
+    }
+
+    public void CerrarTutorial()
+    {
+        playerInput.SwitchCurrentActionMap("Gameplay");
+        tutoriales[tutoNum].SetActive(false);
+    }
 }

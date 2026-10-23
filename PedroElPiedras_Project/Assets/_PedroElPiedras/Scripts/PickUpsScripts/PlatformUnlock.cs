@@ -9,6 +9,8 @@ public class PlatformUnlock : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<PlayerController>().platformUnlock = true;
+            other.GetComponent<PlayerController>().tutoNum = 0;
+            other.GetComponent<PlayerController>().Tutorial();
             Destroy(gameObject);
         }
     }

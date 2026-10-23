@@ -161,6 +161,17 @@
                 },
                 {
                     "name": "",
+                    "id": "96097755-3f9c-4466-83d5-856cb69bea29",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a5fe3832-1b33-40af-b741-c8f4c06b14da",
                     "path": "<Keyboard>/leftAlt",
                     "interactions": "",
@@ -173,7 +184,18 @@
                 {
                     "name": "",
                     "id": "4efd7c19-838a-45c0-85e1-6b915eee0424",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "010bff58-3260-43ec-88fc-cc68d57c6e9d",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -184,7 +206,7 @@
                 {
                     "name": "",
                     "id": "815016b0-c3a5-4009-aaa4-bccb6791091c",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -216,17 +238,6 @@
                 },
                 {
                     "name": "",
-                    "id": "0b1985e8-cc6d-45f0-b602-97d82e1ff3bd",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Piedra",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "72d9c51e-d52f-42da-89ff-b6a6930b0c83",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
@@ -239,7 +250,7 @@
                 {
                     "name": "",
                     "id": "16fcc72f-b2fb-40f0-bd88-3a2115442d20",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -279,6 +290,39 @@
                     "name": "",
                     "id": "ef49b4d1-a9ca-416d-b41a-98f555cfa451",
                     "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cerrar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4200b75e-5c23-49c2-be59-776cf67f0025",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cerrar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d51de37a-83f2-4002-b508-f429fa6f41c6",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cerrar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "367e51e8-449f-4489-908b-4145aec406fa",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
