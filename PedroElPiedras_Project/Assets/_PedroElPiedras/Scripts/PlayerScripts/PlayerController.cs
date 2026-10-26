@@ -3,10 +3,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public PlayerInput playerInput;
     Rigidbody rb;
     //movimiento
     public float speed = 10f;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public bool canDash = true;
     //Platform
     public GameObject PlatformManager;
+    public bool platformUnlock;
     
 
     //Piedra
@@ -46,8 +48,15 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject enemyTarget;
     bool canDisparar = true;
-    
-   
+
+    //Tutoriales
+
+    public GameObject[] tutoriales;
+    public int tutoNum;
+
+    //MenuPausa
+
+    public GameObject menuPausa;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -93,14 +102,18 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            PlatformManager.GetComponent<PlatformManager>().InstPlatform();
+            if(platformUnlock == true)
+            {
+                PlatformManager.GetComponent<PlatformManager>().InstPlatform();
+            }
+            
         }
     }
     public void OnPiedra(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            Piedra();
+            //Piedra();
         }
     }
     public void OnDisparo(InputAction.CallbackContext context)
@@ -270,4 +283,60 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         canDisparar = true;
     }
+
+    //Tutoriales
+
+    public void OnCerrar(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            CerrarTutorial();
+        }
+    }
+
+    public void Tutorial()
+    {
+        tutoriales[tutoNum].SetActive(true);
+        playerInput.SwitchCurrentActionMap("Tutorial");
+    }
+
+    public void CerrarTutorial()
+    {
+        playerInput.SwitchCurrentActionMap("Gameplay");
+        tutoriales[tutoNum].SetActive(false);
+    }
+
+    //Menu Pausa
+    /*
+    public void OnPausa(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Pausa();
+        }
+    }
+
+    public void OnCerrarMenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            CerrarMenu();
+        }
+    }
+    public void Pausa()
+    {
+        playerInput.SwitchCurrentActionMap("Menu");
+        menuPausa.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void CerrarMenu()
+    {
+        playerInput.SwitchCurrentActionMap("Gameplay");
+        menuPausa.SetActive(false);
+        Time.timeScale = 1f;
+
+    }
+    */
+    
 }

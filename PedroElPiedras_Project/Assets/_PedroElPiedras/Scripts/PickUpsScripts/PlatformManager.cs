@@ -4,33 +4,52 @@ public class PlatformManager : MonoBehaviour
 {
     public GameObject[] platformList;
     public int platformNum;
+
     public Transform[] platformPos;
     public int platPosformNum;
+
     public bool canInvoke = false;
-    public bool canMove = true;
+
     public GameObject[] instanRef;
     public int numInstanRef;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        canMove = true;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void InstPlatform()
     {
-        if (canInvoke && canMove)
+        if (!canInvoke)
+            return;
+
+        if (platformList == null ||
+            platformNum < 0 ||
+            platformNum >= platformList.Length)
         {
-            //platformList[platformNum].SetActive(true);
-            //platformList[platformNum].GetComponent<PlatformDestroy>().DestroyPlatform();
-            platformList[platformNum].GetComponent<MovimientoLerp>().IniciarMovimiento();
-            //Instantiate(platformList[platformNum], platformPos[platPosformNum].position, Quaternion.identity);
-            canMove = false;
-            
+            Debug.LogWarning("Numero de plataforma no valido.", this);
+            return;
         }
+
+        GameObject plataforma = platformList[platformNum];
+
+        if (plataforma == null)
+            return;
+
+        MovimientoLerp movimiento =
+            plataforma.GetComponent<MovimientoLerp>();
+
+        if (movimiento == null)
+        {
+            Debug.LogError(
+                "La plataforma no tiene el componente MovimientoLerp.",
+                plataforma
+            );
+            return;
+        }
+
+        // Cada plataforma comprueba su propio estado.
+        movimiento.IniciarMovimiento();
+    }
+
+    public void CanMove()
+    {
+        // Ya no es necesario habilitar el movimiento
+        // desde el objeto interactuable.
     }
 }
