@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -52,6 +53,10 @@ public class PlayerController : MonoBehaviour
 
     public GameObject[] tutoriales;
     public int tutoNum;
+
+    //MenuPausa
+
+    public GameObject menuPausa;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -300,4 +305,38 @@ public class PlayerController : MonoBehaviour
         playerInput.SwitchCurrentActionMap("Gameplay");
         tutoriales[tutoNum].SetActive(false);
     }
+
+    //Menu Pausa
+    /*
+    public void OnPausa(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Pausa();
+        }
+    }
+
+    public void OnCerrarMenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            CerrarMenu();
+        }
+    }
+    public void Pausa()
+    {
+        playerInput.SwitchCurrentActionMap("Menu");
+        menuPausa.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void CerrarMenu()
+    {
+        playerInput.SwitchCurrentActionMap("Gameplay");
+        menuPausa.SetActive(false);
+        Time.timeScale = 1f;
+
+    }
+    */
+    
 }

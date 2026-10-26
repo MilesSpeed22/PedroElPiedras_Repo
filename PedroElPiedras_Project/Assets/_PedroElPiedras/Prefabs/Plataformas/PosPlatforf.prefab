@@ -158,18 +158,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f629a4e7a0b005342a269509dc3f8c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformInvoque01
-  platformList:
-  - {fileID: 9037825447799663534, guid: 9bf3dd7594e7bec43a34ed799718285e, type: 3}
-  - {fileID: 1494499841944661209, guid: efec0b02c58bdb34f89e37da52f06c49, type: 3}
+  platformManager: {fileID: 0}
+  playerController: {fileID: 0}
   platformNum: 0
-  platformPos:
-  - {fileID: 0}
-  - {fileID: 0}
   platPosformNum: 0
-  canInvoke: 0
-  instanRef:
-  - {fileID: 8997524048160066490}
-  - {fileID: 0}
   numInstanRef: 0
 --- !u!1 &8997524048160066490
 GameObject:
@@ -277,7 +269,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
