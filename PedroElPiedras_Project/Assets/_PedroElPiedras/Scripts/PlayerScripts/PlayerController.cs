@@ -307,7 +307,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Menu Pausa
-    /*
+    
     public void OnPausa(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -337,6 +337,6 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1f;
 
     }
-    */
+    
     
 }

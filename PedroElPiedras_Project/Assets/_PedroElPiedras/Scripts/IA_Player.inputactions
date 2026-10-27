@@ -382,6 +382,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CerrarMenu",
+                    "type": "Button",
+                    "id": "60045a01-6f87-4434-a99b-72546a47aafc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -437,6 +446,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "906a3ae2-8bd8-49c0-bb9e-694a4f1e8722",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CerrarMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
