@@ -5,6 +5,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject player;
 
     public GameObject menuPausa;
+
+    public GameObject opcionesMenu;
+    public GameObject controlesMenu;
     public void Reanudar()
     {
         Time.timeScale = 1.0f;
@@ -19,10 +22,28 @@ public class PauseMenu : MonoBehaviour
 
     public void Opciones()
     {
-
+        opcionesMenu.SetActive(true);
+        opcionesMenu.GetComponent<SeleccionarPrimerBoton>().SeleccionarBoton();
     }
     public void Salir()
     {
         Application.Quit();
+    }
+
+    public void VolverOpciones()
+    {
+        opcionesMenu.SetActive(false);
+        menuPausa.GetComponent<SeleccionarPrimerBoton>().SeleccionarBoton();
+    }
+    public void VolverControles()
+    {
+        controlesMenu.SetActive(false);
+        opcionesMenu.GetComponent<SeleccionarPrimerBoton>().SeleccionarBoton();
+    }
+
+    public void Controles()
+    {
+        controlesMenu.SetActive(true);
+        controlesMenu.GetComponent<SeleccionarPrimerBoton>().SeleccionarBoton();
     }
 }

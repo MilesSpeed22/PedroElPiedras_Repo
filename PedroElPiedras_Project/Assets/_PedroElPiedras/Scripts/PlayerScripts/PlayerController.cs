@@ -328,6 +328,7 @@ public class PlayerController : MonoBehaviour
         playerInput.SwitchCurrentActionMap("Menu");
         menuPausa.SetActive(true);
         Time.timeScale = 0f;
+        menuPausa.GetComponent<SeleccionarPrimerBoton>().SeleccionarBoton();
     }
 
     public void CerrarMenu()
