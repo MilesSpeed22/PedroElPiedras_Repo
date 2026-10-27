@@ -3,14 +3,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-  
+
     public void NewGame()
     {
-       
+
         SceneManager.LoadScene(1);
     }
 
@@ -26,6 +26,28 @@ Application.Quit()
 
 #endif
 
+    }
+
+    public GameObject panelControles;
+    public void OpenControls()
+    {
+        panelControles.SetActive(true);
+    }
+
+    public void CloseControls()
+    {
+        panelControles.SetActive(false);
+    }
+
+    public GameObject panelSettings;
+    public void OpenSettings()
+    {
+        panelSettings.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        panelSettings.SetActive(false);
     }
 }
 
