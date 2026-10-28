@@ -13,6 +13,8 @@ public class PlatformManager : MonoBehaviour
     public GameObject[] instanRef;
     public int numInstanRef;
 
+    public AudioManager audioManager;
+
     public void InstPlatform()
     {
         if (!canInvoke)
@@ -45,6 +47,8 @@ public class PlatformManager : MonoBehaviour
 
         // Cada plataforma comprueba su propio estado.
         movimiento.IniciarMovimiento();
+
+        audioManager.PlaySFX(2);
     }
 
     public void CanMove()
