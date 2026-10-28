@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
     public PlayerInput playerInput;
+    public AudioManager audioManager;
     Rigidbody rb;
     //movimiento (si cambio la speed cambiar tambien la funcion del dashCC())
     public float speed = 15f;
@@ -192,7 +193,8 @@ public class PlayerController : MonoBehaviour
         if (isGrounded || doubleJump)
         {
            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-            doubleJump = false; 
+            doubleJump = false;
+            audioManager.PlaySFX(0);
         }
        
        
@@ -211,6 +213,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(DashCC());
             canDash = false;
             StartCoroutine(CanDashCC());
+            audioManager.PlaySFX(1);
         }
         
     }
