@@ -3098,6 +3098,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4bfb54fc412c17649915779773d83214, type: 3}
   SFXList:
   - {fileID: 8300000, guid: 9cd12adbda4c5ff439b91ae2e9d7afc7, type: 3}
+  - {fileID: 8300000, guid: 623fb73086355b444a5e2a86b1aaf264, type: 3}
   - {fileID: 8300000, guid: ffb80f1439968ac4490eb01057d8ec84, type: 3}
   - {fileID: 8300000, guid: b8c968ce12d87df45b1d9219994dbba6, type: 3}
 --- !u!1 &1192320368 stripped
@@ -5273,10 +5274,18 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 1278250330888165017, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1185361067}
     - target: {fileID: 1672675744986373343, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: manager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 1672675744986373343, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1185361067}
     - target: {fileID: 2577507565091579934, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: platformManager
       value: 
@@ -5293,6 +5302,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 3675297198041538514, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1185361067}
     - target: {fileID: 5266411737663886905, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: m_Name
       value: PF_LVL_01
@@ -5301,6 +5314,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 5808934530801169451, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1185361067}
     - target: {fileID: 6239252191156474763, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: platformManager
       value: 
@@ -5309,10 +5326,18 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 6642954822555496005, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1185361067}
     - target: {fileID: 6673017184000136081, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: manager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 6673017184000136081, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1185361067}
     - target: {fileID: 6768058004696923388, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: platformManager
       value: 
@@ -5333,10 +5358,18 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 8079245089767938488, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1185361067}
     - target: {fileID: 8249057268562855355, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: manager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 8249057268562855355, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1185361067}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
