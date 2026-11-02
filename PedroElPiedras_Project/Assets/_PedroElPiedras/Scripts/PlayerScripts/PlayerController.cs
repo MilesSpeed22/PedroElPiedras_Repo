@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public PlayerInput playerInput;
     public AudioManager audioManager;
     Rigidbody rb;
+    private Animator animator;
     //movimiento (si cambio la speed cambiar tambien la funcion del dashCC())
     public float speed = 15f;
     public float rotationSpeed = 10f;
@@ -65,6 +66,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -76,11 +78,12 @@ public class PlayerController : MonoBehaviour
             doubleJump = false;
         }
        
-
+        UpdateJumpAnimations();
     }
     private void FixedUpdate()
     {
         Movimiento();
+        UpdateAnimations();
     }
     
   
@@ -193,6 +196,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded || doubleJump)
         {
            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            animator.SetTrigger("isJumping");
             doubleJump = false;
             audioManager.PlaySFX(0);
         }
@@ -209,6 +213,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canDash)
         {
+            animator.SetTrigger("isDashing");
             speed = dashSpeed;
             StartCoroutine(DashCC());
             canDash = false;
@@ -313,6 +318,26 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         canDisparar = true;
+    }
+
+    //Animaciones
+
+    private void UpdateAnimations()
+    {
+        Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+
+        float currentSpeed = horizontalVelocity.magnitude;
+
+        bool moving = moveInput.sqrMagnitude > 0.01f;
+
+        animator.SetBool("isWalking", moving && currentSpeed < 14f);
+        animator.SetBool("isRunning", moving && currentSpeed >= 14f);
+    }
+
+    private void UpdateJumpAnimations()
+    {
+        animator.SetFloat("verticalSpeed", rb.linearVelocity.y);
+        animator.SetBool("isGrounded", isGrounded);
     }
 
     //Tutoriales
