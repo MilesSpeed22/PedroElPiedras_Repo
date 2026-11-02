@@ -26,7 +26,7 @@ public class MovimientoLerp : MonoBehaviour
 
     [SerializeField] public bool canMove = true;
 
-    public AudioManager audioManager;
+    public AudioPlataforma audioManager;
 
     // Impide reutilizar esta plataforma.
     [SerializeField] private bool yaActivada = false;
@@ -102,7 +102,7 @@ public class MovimientoLerp : MonoBehaviour
         yield return new WaitForSeconds(tiempoEspera);
 
 
-        audioManager.PlaySFX(3);
+        audioManager.PlaySFX(0);
         // Vuelta: regresa al punto inicial.
         yield return StartCoroutine(
             MoverEntrePuntos(
