@@ -517,7 +517,16 @@ VisualEffect:
       m_Array:
       - m_Value: 1
         m_Name: Size
-        m_Overridden: 1
+        m_Overridden: 0
+      - m_Value: 2
+        m_Name: TrailsLifetime
+        m_Overridden: 0
+      - m_Value: 50000
+        m_Name: SpawnRate
+        m_Overridden: 0
+      - m_Value: 30
+        m_Name: TrailsSpawnRate
+        m_Overridden: 0
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -550,7 +559,7 @@ Transform:
   m_GameObject: {fileID: 840859264}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.9241, y: -0, z: 1.43638}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
