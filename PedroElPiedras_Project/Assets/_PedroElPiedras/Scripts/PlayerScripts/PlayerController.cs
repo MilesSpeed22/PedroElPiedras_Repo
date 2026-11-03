@@ -339,8 +339,8 @@ public class PlayerController : MonoBehaviour
 
         bool moving = moveInput.sqrMagnitude > 0.01f;
 
-        animator.SetBool("isWalking", moving && currentSpeed < 14f);
-        animator.SetBool("isRunning", moving && currentSpeed >= 14f);
+        animator.SetBool("isWalking", moving && currentSpeed < 12f);
+        animator.SetBool("isRunning", moving && currentSpeed >= 12f);
     }
 
     private void UpdateJumpAnimations()
