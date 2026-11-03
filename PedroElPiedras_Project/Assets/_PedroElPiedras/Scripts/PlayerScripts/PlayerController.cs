@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] bool isGrounded;
     public bool doubleJump = false;
+    private bool hasJumped;
     //Dash
     public float dashSpeed = 30f;
     public float timeDash;
@@ -77,6 +78,14 @@ public class PlayerController : MonoBehaviour
         {
             doubleJump = false;
         }
+
+        bool isFalling = !isGrounded && rb.linearVelocity.y < -0.1f && !hasJumped;
+        animator.SetBool("isFalling", isFalling);
+
+        if (isGrounded)
+        {
+            hasJumped = false;
+        }
        
         UpdateJumpAnimations();
     }
@@ -94,8 +103,8 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-
             Jump();
+            hasJumped = true;
         }
     }
     public void OnDash(InputAction.CallbackContext context)
