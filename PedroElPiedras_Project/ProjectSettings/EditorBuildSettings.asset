@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_PedroElPiedras/Scenes/SCN_TestingJorge.unity
     guid: 46994965f49ed464398edf3d9dc8a719
+  - enabled: 1
+    path: Assets/_PedroElPiedras/Scenes/SCN_2TestingJorge.unity
+    guid: 49958d762dfe91043955de3286f6dcc9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 583320f14cbb133438f7e0961e3b7e86, type: 3}
   m_UseUCBPForAssetBundles: 0
