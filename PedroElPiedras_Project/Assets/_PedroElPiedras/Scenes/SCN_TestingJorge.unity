@@ -3523,6 +3523,14 @@ PrefabInstance:
       propertyPath: m_FirstSelected
       value: 
       objectReference: {fileID: 666398603}
+    - target: {fileID: 7979758102308933288, guid: c2a8ef6962a6f664ab251cb2d0186131, type: 3}
+      propertyPath: m_PointAction
+      value: 
+      objectReference: {fileID: 848417788916491708, guid: bc145f229a1ad1f468b941b4e418e32a, type: 3}
+    - target: {fileID: 7979758102308933288, guid: c2a8ef6962a6f664ab251cb2d0186131, type: 3}
+      propertyPath: m_LeftClickAction
+      value: 
+      objectReference: {fileID: 2075609489098900681, guid: bc145f229a1ad1f468b941b4e418e32a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3799,13 +3807,29 @@ PrefabInstance:
       propertyPath: platformManager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 3552399720774177107, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: MinDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3675297198041538514, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: manager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 4257994471126701285, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: MaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257994471126701285, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: MinDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5266411737663886905, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: m_Name
       value: PF_LVL_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707887431826647882, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: MinDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5808934530801169451, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: manager
