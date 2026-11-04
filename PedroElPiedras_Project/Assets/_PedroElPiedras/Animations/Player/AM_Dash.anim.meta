@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:PedroElPiedras_Project/Assets/_PedroElPiedras/Animations/Player/AM_Dash.anim.meta
 guid: 7d949cf6b146bb54584d5a0905bb854b
 NativeFormatImporter:
+========
+guid: 7a73411db63f4ea41aeeb77cce2c193a
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> dev:PedroElPiedras_Project/Assets/_PedroElPiedras/Prototipo.meta
   externalObjects: {}
   mainObjectFileID: 7400000
   userData: 

@@ -207,7 +207,7 @@ public class PlayerController : MonoBehaviour
            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
             animator.SetTrigger("isJumping");
             doubleJump = false;
-            audioManager.PlaySFX(0);
+            audioManager.PlaySFX(1);
         }
        
        
@@ -227,7 +227,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(DashCC());
             canDash = false;
             StartCoroutine(CanDashCC());
-            audioManager.PlaySFX(1);
+            audioManager.PlaySFX(0);
         }
         
     }

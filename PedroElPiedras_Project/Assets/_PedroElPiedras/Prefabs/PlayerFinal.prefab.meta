@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:PedroElPiedras_Project/Assets/_PedroElPiedras/Prefabs/PlayerFinal.prefab.meta
 guid: b3bd7df34ba1dbe4581f09d7f890633b
 PrefabImporter:
+========
+guid: 49958d762dfe91043955de3286f6dcc9
+DefaultImporter:
+>>>>>>>> dev:PedroElPiedras_Project/Assets/_PedroElPiedras/Scenes/SCN_2TestingJorge.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

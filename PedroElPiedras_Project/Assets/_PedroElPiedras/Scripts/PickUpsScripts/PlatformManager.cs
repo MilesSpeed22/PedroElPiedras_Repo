@@ -48,7 +48,7 @@ public class PlatformManager : MonoBehaviour
         // Cada plataforma comprueba su propio estado.
         movimiento.IniciarMovimiento();
 
-        audioManager.PlaySFX(2);
+        audioManager.PlaySFX(3);
     }
 
     public void CanMove()
