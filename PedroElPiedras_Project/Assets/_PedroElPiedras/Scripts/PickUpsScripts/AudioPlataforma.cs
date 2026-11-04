@@ -10,7 +10,7 @@ public class AudioPlataforma : MonoBehaviour
 
     public void PlaySFX(int SFXIndex)
     {
-        SFXSource.clip = SFXList[SFXIndex];
-        SFXSource.Play();
+        Debug.Log("Entra sonido Manager");
+        SFXSource.PlayOneShot(SFXList[SFXIndex]);
     }
 }

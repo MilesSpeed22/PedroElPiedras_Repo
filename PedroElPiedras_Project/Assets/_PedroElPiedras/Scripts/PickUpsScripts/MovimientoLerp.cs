@@ -103,6 +103,7 @@ public class MovimientoLerp : MonoBehaviour
 
 
         audioManager.PlaySFX(0);
+        Debug.Log("entra sonido");
         // Vuelta: regresa al punto inicial.
         yield return StartCoroutine(
             MoverEntrePuntos(

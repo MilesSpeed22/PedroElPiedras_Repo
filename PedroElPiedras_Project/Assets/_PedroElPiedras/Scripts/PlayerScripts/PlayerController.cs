@@ -10,28 +10,30 @@ public class PlayerController : MonoBehaviour
     public PlayerInput playerInput;
     public AudioManager audioManager;
     Rigidbody rb;
+    private Animator animator;
     //movimiento (si cambio la speed cambiar tambien la funcion del dashCC())
     public float speed = 15f;
     public float rotationSpeed = 10f;
-    private Vector2 inputMovement = Vector2.zero;
-    Vector3 moveDirection;
-    Vector3 velocity;
     Vector2 moveInput;
 
     [SerializeField] private float acceleration = 32f;
     [SerializeField] private float deceleration = 70f;
     //Salto
+    [Header("Salto")]
     public float jumpHeight = 2f;
     public Transform groundCheck;
     private float groundCheckRadius = 0.3f;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] bool isGrounded;
     public bool doubleJump = false;
+    private bool hasJumped;
     //Dash
+    [Header("Dash")]
     public float dashSpeed = 30f;
     public float timeDash;
     public bool canDash = true;
     //Platform
+    [Header("Plataforma")]
     public GameObject PlatformManager;
     public bool platformUnlock;
     
@@ -44,9 +46,11 @@ public class PlayerController : MonoBehaviour
     public int numPiedra;
 
     //Respawn
+    [Header("Respawn")]
     public Transform[] respawn;
     public int respawnNum = 0;
     //Disparo
+    [Header("Disparo")]
     public GameObject bullet;
     public Transform bulletPos;
     public List<GameObject> enemies = new List<GameObject>();
@@ -54,7 +58,7 @@ public class PlayerController : MonoBehaviour
     bool canDisparar = true;
 
     //Tutoriales
-
+    [Header("Tutoriales")]
     public GameObject[] tutoriales;
     public int tutoNum;
 
@@ -65,6 +69,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -75,12 +80,21 @@ public class PlayerController : MonoBehaviour
         {
             doubleJump = false;
         }
-       
 
+        bool isFalling = !isGrounded && rb.linearVelocity.y < -0.1f && !hasJumped;
+        animator.SetBool("isFalling", isFalling);
+
+        if (isGrounded)
+        {
+            hasJumped = false;
+        }
+       
+        UpdateJumpAnimations();
     }
     private void FixedUpdate()
     {
         Movimiento();
+        UpdateAnimations();
     }
     
   
@@ -91,8 +105,8 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-
             Jump();
+            hasJumped = true;
         }
     }
     public void OnDash(InputAction.CallbackContext context)
@@ -193,8 +207,9 @@ public class PlayerController : MonoBehaviour
         if (isGrounded || doubleJump)
         {
            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            animator.SetTrigger("isJumping");
             doubleJump = false;
-            audioManager.PlaySFX(1);
+            audioManager.PlaySFX(0);
         }
        
        
@@ -209,11 +224,12 @@ public class PlayerController : MonoBehaviour
     {
         if (canDash)
         {
+            animator.SetTrigger("isDashing");
             speed = dashSpeed;
             StartCoroutine(DashCC());
             canDash = false;
             StartCoroutine(CanDashCC());
-            audioManager.PlaySFX(0);
+            audioManager.PlaySFX(1);
         }
         
     }
@@ -313,6 +329,26 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         canDisparar = true;
+    }
+
+    //Animaciones
+
+    private void UpdateAnimations()
+    {
+        Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+
+        float currentSpeed = horizontalVelocity.magnitude;
+
+        bool moving = moveInput.sqrMagnitude > 0.01f;
+
+        animator.SetBool("isWalking", moving && currentSpeed < 12f);
+        animator.SetBool("isRunning", moving && currentSpeed >= 12f);
+    }
+
+    private void UpdateJumpAnimations()
+    {
+        animator.SetFloat("verticalSpeed", rb.linearVelocity.y);
+        animator.SetBool("isGrounded", isGrounded);
     }
 
     //Tutoriales
