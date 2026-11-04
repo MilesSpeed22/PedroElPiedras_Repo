@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
             hasJumped = false;
         }
 
-        bool isFallingFast = isFalling && rb.linearVelocity.y < -6f;
+        bool isFallingFast = isFalling && rb.linearVelocity.y < -10f;
         animator.SetBool("isFallingFast", isFallingFast);
        
         UpdateJumpAnimations();
