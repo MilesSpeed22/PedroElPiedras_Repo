@@ -3362,6 +3362,10 @@ PrefabInstance:
       propertyPath: 'tutoriales.Array.data[0]'
       value: 
       objectReference: {fileID: 1575024644}
+    - target: {fileID: 4053067207789643000, guid: 91a3c847ec2580b49a704b0bcc07ba17, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.042
+      objectReference: {fileID: 0}
     - target: {fileID: 5344002725156640963, guid: 91a3c847ec2580b49a704b0bcc07ba17, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3839,6 +3843,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 6677492578897088925, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6768058004696923388, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: platformManager
       value: 
