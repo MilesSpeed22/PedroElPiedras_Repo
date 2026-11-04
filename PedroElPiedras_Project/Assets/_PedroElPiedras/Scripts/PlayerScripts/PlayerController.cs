@@ -88,6 +88,9 @@ public class PlayerController : MonoBehaviour
         {
             hasJumped = false;
         }
+
+        bool isFallingFast = isFalling && rb.linearVelocity.y < -6f;
+        animator.SetBool("isFallingFast", isFallingFast);
        
         UpdateJumpAnimations();
     }
@@ -122,7 +125,9 @@ public class PlayerController : MonoBehaviour
         {
             if(platformUnlock == true)
             {
+                animator.SetBool("isInvoking", true);
                 PlatformManager.GetComponent<PlatformManager>().InstPlatform();
+                
             }
             
         }
