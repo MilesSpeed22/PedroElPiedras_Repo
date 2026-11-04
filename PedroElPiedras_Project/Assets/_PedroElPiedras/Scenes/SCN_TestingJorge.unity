@@ -3771,6 +3771,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1269913972}
+    - target: {fileID: 1419930407869332063, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1672675744986373343, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: manager
       value: 
@@ -3818,6 +3822,10 @@ PrefabInstance:
     - target: {fileID: 5266411737663886905, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: m_Name
       value: PF_LVL_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266411737663886905, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5707887431826647882, guid: 5c3f44a846498b541985d50ebd3afc1e, type: 3}
       propertyPath: MinDistance
