@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float acceleration = 32f;
     [SerializeField] private float deceleration = 70f;
+
+    private Vector3 velocidadEmpuje;
+    public float frenadoEmpuje = 3f;
     //Salto
     [Header("Salto")]
     public float jumpHeight = 2f;
@@ -165,7 +168,7 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = rb.linearVelocity;
 
         Vector3 currentHorizontalVelocity =
-            new Vector3(velocity.x, 0f, velocity.z);
+            new Vector3(velocity.x - velocidadEmpuje.x, 0f, velocity.z - velocidadEmpuje.z);
 
         // Velocidad horizontal deseada
         Vector3 targetVelocity = moveDirection * speed;
@@ -182,10 +185,13 @@ public class PlayerController : MonoBehaviour
         );
 
         // Aplicar la nueva velocidad sin alterar la velocidad vertical
-        velocity.x = newHorizontalVelocity.x;
-        velocity.z = newHorizontalVelocity.z;
+        velocity.x = newHorizontalVelocity.x + velocidadEmpuje.x;
+        velocity.z = newHorizontalVelocity.z + velocidadEmpuje.z;
 
         rb.linearVelocity = velocity;
+
+        //reducir empuje progresivamente
+        velocidadEmpuje = Vector3.MoveTowards(velocidadEmpuje, Vector3.zero, frenadoEmpuje * Time.fixedDeltaTime);
 
         // Girar hacia donde se mueve el personaje
         if (moveDirection.sqrMagnitude > 0.01f)
@@ -242,6 +248,10 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(timeDash);
         canDash = true;
+    }
+    public void RecibirEmpuje(Vector3 fuerza)
+    {
+        velocidadEmpuje += fuerza;
     }
 
     public void Piedra()
