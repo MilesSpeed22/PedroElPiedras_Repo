@@ -10317,7 +10317,6 @@ GameObject:
   - component: {fileID: 6213785341009055799}
   - component: {fileID: 3064263175835081069}
   - component: {fileID: 369463426977181692}
-  - component: {fileID: 5093033463370538479}
   - component: {fileID: 2017236768543417988}
   m_Layer: 0
   m_Name: Player
@@ -10664,23 +10663,6 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &5093033463370538479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5344002725156640963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c634994e1249b9742b67f0e9138eafd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BodyTilt
-  spine: {fileID: 0}
-  player: {fileID: 1654602736624268661}
-  rb: {fileID: 6213785341009055799}
-  maxTiltAngle: 254.1
-  tiltSpeed: 5
 --- !u!135 &2017236768543417988
 SphereCollider:
   m_ObjectHideFlags: 0

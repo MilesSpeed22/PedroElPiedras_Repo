@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,10 +7,12 @@ public class MeteorSpawner : MonoBehaviour
 {
     [Header("MeteorSettings")]
     public GameObject meteorPrefab;
+    public LayerMask groundLayer;
 
     public float spawnInterval = 3f;
     public float spawnRadius = 30f;
     public float spawnHeight = 25f;
+    public float meteorHeight = 20f;
 
     void Start()
     {
@@ -28,7 +31,21 @@ public class MeteorSpawner : MonoBehaviour
 
     void SpawnMeteor()
     {
-        Vector3 randomPosition = transform.position + new Vector3(Random.Range(-spawnRadius, spawnRadius), spawnHeight, Random.Range(-spawnRadius, spawnRadius));
-        Instantiate(meteorPrefab, randomPosition, Quaternion.identity);
+        for (int i = 0; i < 10; i++)
+        {
+            float randomX = Random.Range(-spawnRadius, spawnRadius);
+            float randomZ = Random.Range(-spawnRadius, spawnRadius);
+
+            Vector3 rayOrigin = transform.position + new Vector3(randomX, spawnHeight, randomZ);
+
+            if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, spawnHeight * 2f, groundLayer))
+            {
+                Vector3 spawnPosition = hit.point + Vector3.up * meteorHeight;
+
+                Instantiate(meteorPrefab, spawnPosition, Quaternion.identity);
+
+                return;
+            }
+        }
     }
 }

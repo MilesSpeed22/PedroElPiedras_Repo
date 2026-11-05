@@ -2228,7 +2228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeteorSpawner
   meteorPrefab: {fileID: 8794186915922404849, guid: 1d74cfc8f234885438d76391875f3452, type: 3}
-  spawnInterval: 10
+  spawnInterval: 0.1
   spawnRadius: 100
   spawnHeight: 1
 --- !u!4 &1383137393
@@ -3410,16 +3410,11 @@ PrefabInstance:
       propertyPath: 'tutoriales.Array.data[0]'
       value: 
       objectReference: {fileID: 1575024644}
-    - target: {fileID: 5093033463370538479, guid: 91a3c847ec2580b49a704b0bcc07ba17, type: 3}
-      propertyPath: spine
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5344002725156640963, guid: 91a3c847ec2580b49a704b0bcc07ba17, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5093033463370538479, guid: 91a3c847ec2580b49a704b0bcc07ba17, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
