@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4360000844533378311}
   - component: {fileID: 3726860378527438571}
   - component: {fileID: 1118485315759019029}
-  - component: {fileID: 4049035432583705483}
-  m_Layer: 3
+  - component: {fileID: 1695511395249493068}
+  m_Layer: 9
   m_Name: PlatformInv03
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.09431589, y: -0.715291, z: 0.0905184, w: 0.68649095}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9.266966, y: 4.3941, z: 7.894742}
+  m_LocalScale: {x: 9.266967, y: 4.3941007, z: 7.894741}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,16 +113,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4049035432583705483
+--- !u!114 &1695511395249493068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494499841944661209}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d9ef71ba4fa864895caf51d17d2b45, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f8ba50a12aa65240849b5df0de68c28, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlatformDestroy
-  numDestroy: 5
+  m_EditorClassIdentifier: Assembly-CSharp::TemblorPlataforma
+  tiempoReposo: 4
+  duracionTemblor: 3
+  intensidadTemblor: 0.05
+  velocidadTemblor: 25

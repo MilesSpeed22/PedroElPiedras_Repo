@@ -19,16 +19,32 @@ public class MovimientoLerp : MonoBehaviour
     public bool iniciarAutomaticamente = false;
 
     private Quaternion rotacionInicial;
+
     public PlatformManager manager;
+
+    private TemblorPlataforma[] temblor;
+
+    [SerializeField] public bool canMove = true;
+
+    public AudioPlataforma audioManager;
+
+    // Impide reutilizar esta plataforma.
+    [SerializeField] private bool yaActivada = false;
+
+    public bool YaActivada => yaActivada;
 
     private void Start()
     {
         rotacionInicial = transform.rotation;
 
+        temblor = GetComponentsInChildren<TemblorPlataforma>();
     }
 
     public void IniciarMovimiento()
     {
+        if (yaActivada || !canMove)
+            return;
+
         if (puntoInicio == null ||
             puntoIntermedio == null ||
             puntoDestino == null)
@@ -40,8 +56,25 @@ public class MovimientoLerp : MonoBehaviour
             return;
         }
 
+        // Se bloquea para siempre, aunque el movimiento termine.
+        yaActivada = true;
+        canMove = false;
+
+         if (temblor != null)
+        {
+            foreach(TemblorPlataforma t in temblor) 
+            {
+                if (t != null) 
+                {
+                    t.ActivarTemblor();
+                }
+            }
+        }
+
         StopAllCoroutines();
         StartCoroutine(CicloMovimiento());
+
+       
     }
 
     private IEnumerator CicloMovimiento()
@@ -51,16 +84,27 @@ public class MovimientoLerp : MonoBehaviour
         Quaternion destinoRotacion =
             Quaternion.Euler(rotacionFinal);
 
-        // Colocamos el objeto en el inicio
+        // Colocamos la plataforma en el inicio.
         transform.position = puntoInicio.position;
+        
+        // Ida: forma el puente.
+        yield return StartCoroutine(
+            MoverEntrePuntos(
+                puntoInicio.position,
+                puntoIntermedio.position,
+                puntoDestino.position,
+                rotacionInicial,
+                destinoRotacion
+            )
+        );
 
-        // Ida
-        yield return StartCoroutine(MoverEntrePuntos(puntoInicio.position, puntoIntermedio.position, puntoDestino.position,rotacionInicial,destinoRotacion));
-
-        // Esperamos en el destino
+        // Espera en el destino.
         yield return new WaitForSeconds(tiempoEspera);
 
-        // Vuelta: invertimos la curva
+
+        audioManager.PlaySFX(0);
+        Debug.Log("entra sonido");
+        // Vuelta: regresa al punto inicial.
         yield return StartCoroutine(
             MoverEntrePuntos(
                 puntoDestino.position,
@@ -70,9 +114,11 @@ public class MovimientoLerp : MonoBehaviour
                 rotacionInicial
             )
         );
+        
+        // La plataforma ya ha regresado: puede activarse otra vez.
+        yaActivada = false;
+        canMove = true;
 
-        //Tiempo volver a mover
-        yield return StartCoroutine(CanMove());
     }
 
     private IEnumerator MoverEntrePuntos(
@@ -86,12 +132,12 @@ public class MovimientoLerp : MonoBehaviour
 
         while (tiempo < duracion)
         {
-            float t = tiempo / duracion;
+            float t = duracion > 0f
+                ? tiempo / duracion
+                : 1f;
 
-            // Suavizamos el movimiento
             float tSuave = Mathf.SmoothStep(0f, 1f, t);
 
-            // Curva de Bezier cuadratica
             Vector3 posicion =
                 (1f - tSuave) * (1f - tSuave) * A +
                 2f * (1f - tSuave) * tSuave * B +
@@ -99,7 +145,6 @@ public class MovimientoLerp : MonoBehaviour
 
             transform.position = posicion;
 
-            // Interpolamos la rotacion
             transform.rotation = Quaternion.Slerp(
                 rotacionDesde,
                 rotacionHasta,
@@ -108,19 +153,12 @@ public class MovimientoLerp : MonoBehaviour
 
             tiempo += Time.deltaTime;
             yield return null;
-
-            
         }
 
-        // Ajustamos los valores finales exactos
+        // Ajuste exacto de la posición y rotación finales.
         transform.position = C;
         transform.rotation = rotacionHasta;
     }
+  
 
-    IEnumerator CanMove()
-    {
-        yield return new WaitForSeconds(0.1f);
-
-        manager.canMove = true;
-    }
 }
