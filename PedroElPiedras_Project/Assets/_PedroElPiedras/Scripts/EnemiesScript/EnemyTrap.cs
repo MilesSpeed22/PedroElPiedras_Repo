@@ -1,9 +1,13 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyTrap : MonoBehaviour
 {
-    public float fuerzaEmpuje = 50f;
+    public float fuerzaEmpuje = 10f;
+    public Vidas vidas;
+    public PlayerController playerController;
+    public GameObject player;
  
 
     private void OnCollisionEnter(Collision collision)
@@ -11,18 +15,31 @@ public class EnemyTrap : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-            collision.gameObject.GetComponent<Vidas>().Golpeado(1);
-            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+            Vidas playerVidas = collision.gameObject.GetComponent<Vidas>();
+            playerVidas.Golpeado(1);
 
-            if (player != null)
+            if (vidas.vida > 0)
             {
-                Vector3 direccion = (collision.transform.position - transform.position).normalized;
+                Rigidbody rb = player.GetComponent<Rigidbody>();
 
-                direccion.y = 0f;
-                direccion.Normalize();
-                player.RecibirEmpuje(direccion * fuerzaEmpuje);
-                Debug.Log("Empujando a: " + collision.gameObject.name);
+                if (player != null)
+                {
+                    Vector3 direccion = (player.transform.position - transform.position).normalized;
+
+                    direccion.y = 0f;
+                    direccion.Normalize();
+                    //player.RecibirEmpuje(direccion * fuerzaEmpuje);
+                    playerController.puedeMoverse = false;
+                    playerController.MoverseCorrutina();
+                    rb.AddForce(direccion * fuerzaEmpuje, ForceMode.Impulse);
+                    Debug.Log("Empujando a: " + player.name);
+                }
             }
+            else Debug.Log("El player ha muerto");
+
+        
+       
         }
     }
+   
 }

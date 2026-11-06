@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Vidas : MonoBehaviour
@@ -23,11 +24,18 @@ public class Vidas : MonoBehaviour
             if (vida <= 0)
             {
                 transform.position = playerController.respawn[playerController.respawnNum].position;
-                vida = maxVida;
+                StartCoroutine(DelayVida());
             }
             damageRateTime = Time.time + damageRate;
         }
         
+    }
+
+    IEnumerator DelayVida()
+    {
+        yield return new WaitForSeconds(0.01f);
+        vida = maxVida;
+
     }
     
     

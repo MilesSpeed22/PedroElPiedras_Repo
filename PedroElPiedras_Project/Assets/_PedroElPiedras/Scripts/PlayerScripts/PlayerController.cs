@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerInput playerInput;
     public AudioManager audioManager;
-    Rigidbody rb;
+    public Rigidbody rb;
     private Animator animator;
     //movimiento (si cambio la speed cambiar tambien la funcion del dashCC())
     public float speed = 15f;
@@ -20,7 +20,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float deceleration = 70f;
 
     private Vector3 velocidadEmpuje;
-    public float frenadoEmpuje = 3f;
+    public float frenadoEmpuje = 15f;
+
+    public bool puedeMoverse = true;
     //Salto
     [Header("Salto")]
     public float jumpHeight = 2f;
@@ -96,13 +98,23 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Movimiento();
+      
+         Movimiento();
+        
+        
         UpdateAnimations();
     }
     
   
 
-    public void OnMove(InputAction.CallbackContext context) { moveInput = context.ReadValue<Vector2>(); }
+    public void OnMove(InputAction.CallbackContext context)
+    { 
+        if(puedeMoverse = true)
+        {
+            moveInput = context.ReadValue<Vector2>();
+        }
+        
+    }
     
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -184,14 +196,15 @@ public class PlayerController : MonoBehaviour
             rate * Time.fixedDeltaTime
         );
 
-        // Aplicar la nueva velocidad sin alterar la velocidad vertical
+
+        //reducir empuje progresivamente
+        velocidadEmpuje = Vector3.MoveTowards(velocidadEmpuje, Vector3.zero, frenadoEmpuje * Time.fixedDeltaTime);
+
+        //Sumar empujon al movimiento actual
         velocity.x = newHorizontalVelocity.x + velocidadEmpuje.x;
         velocity.z = newHorizontalVelocity.z + velocidadEmpuje.z;
 
         rb.linearVelocity = velocity;
-
-        //reducir empuje progresivamente
-        velocidadEmpuje = Vector3.MoveTowards(velocidadEmpuje, Vector3.zero, frenadoEmpuje * Time.fixedDeltaTime);
 
         // Girar hacia donde se mueve el personaje
         if (moveDirection.sqrMagnitude > 0.01f)
@@ -239,6 +252,15 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+    public void MoverseCorrutina()
+    {
+        StartCoroutine(MoverseCC());
+    }
+    IEnumerator MoverseCC()
+    {
+        yield return new WaitForSeconds(0.5f);
+        puedeMoverse = true;
+    }
     IEnumerator DashCC()
     {
         yield return new WaitForSeconds(0.3f);
@@ -252,6 +274,7 @@ public class PlayerController : MonoBehaviour
     public void RecibirEmpuje(Vector3 fuerza)
     {
         velocidadEmpuje += fuerza;
+        Debug.Log ("Empujon recibido: " + velocidadEmpuje);
     }
 
     public void Piedra()
