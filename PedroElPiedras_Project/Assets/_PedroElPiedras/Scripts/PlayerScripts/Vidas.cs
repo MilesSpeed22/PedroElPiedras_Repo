@@ -42,6 +42,7 @@ public class Vidas : MonoBehaviour
     {
         yield return new WaitForSeconds(0.01f);
         vida = maxVida;
+        ActualizarBarraVida();
 
     }
     
