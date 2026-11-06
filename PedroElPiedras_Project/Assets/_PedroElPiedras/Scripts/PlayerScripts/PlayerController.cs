@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool isGrounded;
     public bool doubleJump = false;
     private bool hasJumped;
+    private float fallingTimer;
+    public float fastFallDelay = 0.5f;
     //Dash
     [Header("Dash")]
     public float dashSpeed = 30f;
@@ -87,12 +89,26 @@ public class PlayerController : MonoBehaviour
         }
 
         bool isFalling = !isGrounded && rb.linearVelocity.y < -0.1f && !hasJumped;
-        animator.SetBool("isFalling", isFalling);
 
         if (isGrounded)
         {
             hasJumped = false;
         }
+
+        if (isFalling)
+        {
+            fallingTimer += Time.deltaTime;
+        }
+
+        else
+        {
+            fallingTimer = 0f;
+        }
+
+        bool isFastFalling = isFalling && fallingTimer >= fastFallDelay;
+
+        animator.SetBool("isFalling", isFalling);
+        animator.SetBool("isFastFalling", isFastFalling);
        
         UpdateJumpAnimations();
     }
@@ -137,7 +153,9 @@ public class PlayerController : MonoBehaviour
         {
             if(platformUnlock == true)
             {
+                animator.SetBool("isInvoking", true);
                 PlatformManager.GetComponent<PlatformManager>().InstPlatform();
+                
             }
             
         }
@@ -283,6 +301,7 @@ public class PlayerController : MonoBehaviour
         
         if (canPiedra && numPiedra <= 1)
         {
+            animator.SetTrigger("isInvoking");
             numPiedra++;
             piedraInstanciada = Instantiate(piedra, piedraPos.position, Quaternion.identity);
             canPiedra = false;
