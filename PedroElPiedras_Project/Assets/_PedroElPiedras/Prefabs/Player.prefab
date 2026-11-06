@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3422611083063108553}
   - component: {fileID: 6213785341009055799}
   - component: {fileID: 3064263175835081069}
+  - component: {fileID: 5264226114197408910}
   - component: {fileID: 369463426977181692}
   - component: {fileID: 2017236768543417988}
   m_Layer: 0
@@ -60,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5344002725156640963}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.4202856, z: -0, w: 0.9073919}
+  m_LocalRotation: {x: 0, y: 0.42028365, z: 0, w: 0.90739274}
   m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -148,7 +149,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4053067207789643000}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 520
+    m_Bits: 8
   isGrounded: 0
   doubleJump: 0
   dashSpeed: 30
@@ -175,6 +176,22 @@ MonoBehaviour:
   - {fileID: 0}
   tutoNum: 0
   menuPausa: {fileID: 0}
+--- !u!114 &5264226114197408910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5344002725156640963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c2664825f8ab84f99db5c513bbd3e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vidas
+  vida: 3
+  maxVida: 3
+  damage: 0
+  playerController: {fileID: 3064263175835081069}
 --- !u!114 &369463426977181692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,7 +812,7 @@ Transform:
   m_GameObject: {fileID: 7384092914654137816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.96, z: 0}
+  m_LocalPosition: {x: 0, y: -0.042, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
