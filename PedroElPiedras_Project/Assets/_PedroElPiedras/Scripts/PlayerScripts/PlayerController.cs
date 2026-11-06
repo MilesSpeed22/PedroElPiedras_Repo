@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        jumpParticle.SetActive(false);
     }
 
     // Update is called once per frame
