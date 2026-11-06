@@ -3669,6 +3669,7 @@ MonoBehaviour:
   vida: 3
   maxVida: 3
   damage: 0
+  barraVida: {fileID: 489117235}
   damageRate: 0.5
   damageRateTime: 0
   playerController: {fileID: 923850206122217133}
@@ -4974,6 +4975,7 @@ MonoBehaviour:
   vida: 3
   maxVida: 3
   damage: 0
+  barraVida: {fileID: 0}
   damageRate: 0.5
   damageRateTime: 0
   playerController: {fileID: 0}
