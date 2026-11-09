@@ -9030,6 +9030,7 @@ GameObject:
   - component: {fileID: 7437170561540942080}
   - component: {fileID: 2413283411139313126}
   - component: {fileID: 4122179955973880091}
+  - component: {fileID: 8676808437250222326}
   - component: {fileID: 2602049376431435127}
   m_Layer: 0
   m_Name: Player
@@ -9126,7 +9127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   playerInput: {fileID: 4122179955973880091}
   audioManager: {fileID: 0}
-  rb: {fileID: 0}
+  rb: {fileID: 7437170561540942080}
   speed: 15
   rotationSpeed: 10
   acceleration: 32
@@ -9379,6 +9380,25 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8676808437250222326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252255093731859572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c2664825f8ab84f99db5c513bbd3e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vidas
+  vida: 3
+  maxVida: 3
+  damage: 0
+  barraVida: {fileID: 0}
+  damageRate: 0.5
+  damageRateTime: 0
+  playerController: {fileID: 2413283411139313126}
 --- !u!135 &2602049376431435127
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9398,7 +9418,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 10
+  m_Radius: 5
   m_Center: {x: 0.3596077, y: 0, z: -0.6541443}
 --- !u!1 &6354620794853061486
 GameObject:
