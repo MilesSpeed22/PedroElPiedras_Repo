@@ -14,7 +14,7 @@ AvatarMask:
   - m_Path: PiedraFlotanteAbajo3
     m_Weight: 0
   - m_Path: rig.001
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig.001/MCH-HandL_ik.parent
     m_Weight: 0
   - m_Path: rig.001/MCH-HandL_ik.parent/HandL_ik
@@ -32,11 +32,11 @@ AvatarMask:
   - m_Path: rig.001/MCH-HandR_ik.parent/HandR_ik/MCH-UpperArmR_ik_target/MCH-UpperArmR_ik_target_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso
     m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/chest
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/chest/chest_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/hips
@@ -90,31 +90,31 @@ AvatarMask:
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront/DEF-StoneFront/DEF-StoneFront_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.001
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.001/DEF-StoneFront.001
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.001/DEF-StoneFront.001/DEF-StoneFront.001_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.002
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.002/DEF-StoneFront.002
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.002/DEF-StoneFront.002/DEF-StoneFront.002_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.003
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.003/DEF-StoneFront.003
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.003/DEF-StoneFront.003/DEF-StoneFront.003_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.004
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.004/DEF-StoneFront.004
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.004/DEF-StoneFront.004/DEF-StoneFront.004_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.005
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.005/DEF-StoneFront.005
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.005/DEF-StoneFront.005/DEF-StoneFront.005_end
@@ -144,7 +144,7 @@ AvatarMask:
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.009/DEF-StoneFront.009/DEF-StoneFront.009_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.010
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.010/DEF-StoneFront.010
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/ORG-StoneFront.010/DEF-StoneFront.010/DEF-StoneFront.010_end
@@ -180,11 +180,11 @@ AvatarMask:
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront/StoneFront_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.001
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.001/StoneFront.001_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.002
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.002/StoneFront.002_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.003
@@ -192,11 +192,11 @@ AvatarMask:
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.003/StoneFront.003_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.004
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.004/StoneFront.004_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.005
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.005/StoneFront.005_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.006
@@ -216,7 +216,7 @@ AvatarMask:
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.009/StoneFront.009_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.010
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.010/StoneFront.010_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_0/ORG-Spine_0/StoneFront.011
@@ -238,11 +238,11 @@ AvatarMask:
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_1/Spine_1_fk/MCH-Spine_0/Spine_0_fk/tweak_Spine_1/ORG-Spine_1/ORG-Spine_1_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk/MCH-pivot
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk/MCH-pivot/tweak_Spine_2
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk/MCH-pivot/tweak_Spine_2/ORG-Spine_2
@@ -250,15 +250,15 @@ AvatarMask:
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk/MCH-pivot/tweak_Spine_2/ORG-Spine_2/ORG-Spine_2_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk/MCH-Spine_3
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk/MCH-Spine_3/Spine_3_fk
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk/MCH-Spine_3/Spine_3_fk/MCH-WGT-chest
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk/MCH-Spine_3/Spine_3_fk/MCH-WGT-chest/MCH-WGT-chest_end
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk/MCH-Spine_3/Spine_3_fk/tweak_Spine_3
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk/MCH-Spine_3/Spine_3_fk/tweak_Spine_3/ORG-Spine_3
     m_Weight: 0
   - m_Path: rig.001/MCH-torso.parent/torso/MCH-Spine_2/Spine_2_fk/MCH-Spine_3/Spine_3_fk/tweak_Spine_3/ORG-Spine_3/DEF-Head
