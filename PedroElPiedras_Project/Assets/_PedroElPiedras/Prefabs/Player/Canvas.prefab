@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7084235786164669014}
   - component: {fileID: 2560078267127401468}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BarraVida2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 5764298443572330149}
   - component: {fileID: 654880778734488971}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BarraVida1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -843,14 +843,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9388454, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 935976d98aaeb3b44bc66fe5a7fedb07, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13291145019c3ee4b9c862486911377a, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
