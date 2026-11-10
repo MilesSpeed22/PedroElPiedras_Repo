@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/_PedroElPiedras/Scenes/SCN_Main_Menu.unity
     guid: 923caaadf7eaac14a98dc28d850ae140
   - enabled: 1
-    path: Assets/_PedroElPiedras/Scenes/SCN_TestingJorge.unity
+    path: Assets/_PedroElPiedras/Scenes/SCN_Level01.unity
     guid: 46994965f49ed464398edf3d9dc8a719
   - enabled: 1
     path: Assets/_PedroElPiedras/Scenes/SCN_2TestingJorge.unity
