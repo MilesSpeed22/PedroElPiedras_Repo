@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     public bool doubleJump = false;
     private bool hasJumped;
     private float fallingTimer;
-    public float fastFallDelay = 0.5f;
+    public float fastFallDelay = 1f;
     //Dash
     [Header("Dash")]
     public float dashSpeed = 30f;
