@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Rocas
+    second: {fileID: 2100000, guid: d33a88100fd861a458fd2f0c5eede01c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Superficie
     second: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
   materials:
