@@ -23,6 +23,7 @@ public class ObjectFloat : MonoBehaviour
 
     void Awake()
     {
+        Time.timeScale = 1f;
         rt = GetComponent<RectTransform>();
         rotInicial = transform.localRotation;
 
