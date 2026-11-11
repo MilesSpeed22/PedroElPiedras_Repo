@@ -72,6 +72,8 @@ public class PlayerController : MonoBehaviour
     //MenuPausa
 
     public GameObject menuPausa;
+    public GameObject barraVida;
+    public GameObject bolasPoderes;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -446,6 +448,8 @@ public class PlayerController : MonoBehaviour
     {
         playerInput.SwitchCurrentActionMap("Menu");
         menuPausa.SetActive(true);
+        barraVida.SetActive(false);
+        bolasPoderes.SetActive(false);
         Time.timeScale = 0f;
         menuPausa.GetComponent<SeleccionarPrimerBoton>().SeleccionarBoton();
     }

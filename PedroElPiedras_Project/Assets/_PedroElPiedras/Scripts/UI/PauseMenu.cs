@@ -9,11 +9,17 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject opcionesMenu;
     public GameObject controlesMenu;
+
+    public GameObject BarraVida;
+    public GameObject BolasPoderes;
+    
     public void Reanudar()
     {
         Time.timeScale = 1.0f;
         menuPausa.SetActive(false);
         player.GetComponent<PlayerController>().playerInput.SwitchCurrentActionMap("Gameplay");
+        BarraVida.SetActive(true);
+        BolasPoderes.SetActive(true);
     }
 
     public void MenuInicio()
