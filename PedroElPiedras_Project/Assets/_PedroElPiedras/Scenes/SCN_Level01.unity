@@ -27074,6 +27074,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3217211733650351105, guid: 2f474d7babe286541b026bea097667db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3623212330503237705, guid: 2f474d7babe286541b026bea097667db, type: 3}
       propertyPath: m_Name
       value: PF_HeroAsset_CrearPuentes
@@ -27116,6 +27120,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7150332431001649159, guid: 2f474d7babe286541b026bea097667db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821066676750570121, guid: 2f474d7babe286541b026bea097667db, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -29622,6 +29630,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3217211733650351105, guid: 2f474d7babe286541b026bea097667db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3623212330503237705, guid: 2f474d7babe286541b026bea097667db, type: 3}
       propertyPath: m_Name
       value: PF_HeroAsset_CrearPuentes
@@ -29664,6 +29676,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7150332431001649159, guid: 2f474d7babe286541b026bea097667db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821066676750570121, guid: 2f474d7babe286541b026bea097667db, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -34121,6 +34137,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3217211733650351105, guid: 2f474d7babe286541b026bea097667db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3623212330503237705, guid: 2f474d7babe286541b026bea097667db, type: 3}
       propertyPath: m_Name
       value: PF_HeroAsset_CrearPuentes
@@ -34164,6 +34184,10 @@ PrefabInstance:
     - target: {fileID: 7150332431001649159, guid: 2f474d7babe286541b026bea097667db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.397
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821066676750570121, guid: 2f474d7babe286541b026bea097667db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35355,6 +35379,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3217211733650351105, guid: 2f474d7babe286541b026bea097667db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3623212330503237705, guid: 2f474d7babe286541b026bea097667db, type: 3}
       propertyPath: m_Name
       value: PF_HeroAsset_CrearPuentes
@@ -35398,6 +35426,10 @@ PrefabInstance:
     - target: {fileID: 7150332431001649159, guid: 2f474d7babe286541b026bea097667db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.979
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821066676750570121, guid: 2f474d7babe286541b026bea097667db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35999,6 +36031,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3217211733650351105, guid: 2f474d7babe286541b026bea097667db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3623212330503237705, guid: 2f474d7babe286541b026bea097667db, type: 3}
       propertyPath: m_Name
       value: PF_HeroAsset_CrearPuentes
@@ -36042,6 +36078,10 @@ PrefabInstance:
     - target: {fileID: 7150332431001649159, guid: 2f474d7babe286541b026bea097667db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.733
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821066676750570121, guid: 2f474d7babe286541b026bea097667db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
