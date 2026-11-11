@@ -19802,6 +19802,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1185361067}
     - target: {fileID: 2413283411139313126, guid: 379de9fd09f6bb146a629e7696874999, type: 3}
+      propertyPath: fastFallDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413283411139313126, guid: 379de9fd09f6bb146a629e7696874999, type: 3}
       propertyPath: PlatformManager
       value: 
       objectReference: {fileID: 1269913971}

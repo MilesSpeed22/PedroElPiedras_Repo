@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     { 
-        if(puedeMoverse = true)
+        if(puedeMoverse == true)
         {
             moveInput = context.ReadValue<Vector2>();
         }
