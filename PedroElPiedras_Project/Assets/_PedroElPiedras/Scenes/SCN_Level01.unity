@@ -5891,6 +5891,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 534358055}
     m_Modifications:
+    - target: {fileID: 1130828564469061062, guid: faf0f1c6c4a170e47891bf31e632b5f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.13
+      objectReference: {fileID: 0}
     - target: {fileID: 1488755867985228538, guid: faf0f1c6c4a170e47891bf31e632b5f0, type: 3}
       propertyPath: m_Name
       value: RefRespawn
@@ -27296,7 +27300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7847588599463054858, guid: 32ab0f8156ac81c40bc80ce7ff25cbd4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.399994
+      value: -2.3999863
       objectReference: {fileID: 0}
     - target: {fileID: 9163168098496343287, guid: 32ab0f8156ac81c40bc80ce7ff25cbd4, type: 3}
       propertyPath: m_IsActive
