@@ -49,23 +49,30 @@ public class CamaraParedes : MonoBehaviour
             foreach (RaycastHit hit in hits)
             {
                 // GetComponentInChildren también encuentra el Renderer si el mesh está en un hijo
-                Renderer rend = hit.collider.GetComponentInChildren<Renderer>();
-                if (rend == null) continue;
+                Renderer[] rends = hit.collider.GetComponentsInChildren<Renderer>();
 
-                hitThisFrame.Add(rend);
+                if (rends == null) continue;
 
-                // Solo se cambia el material cuando EMPIEZA a tapar, no en cada frame
-                if (!occluding.ContainsKey(rend))
+                foreach ( Renderer rend in rends)
                 {
-                    Material[] originalMaterials = rend.sharedMaterials;
-                    occluding.Add(rend, originalMaterials);
+                    if (rend == null) continue;
 
-                    Material[] transparentMaterials = new Material[originalMaterials.Length];
-                    for (int i = 0; i < originalMaterials.Length; i++)
-                        transparentMaterials[i] = GetTransparentCopy(originalMaterials[i]);
+                    hitThisFrame.Add(rend);
 
-                    rend.sharedMaterials = transparentMaterials;
+                    // Solo se cambia el material cuando EMPIEZA a tapar, no en cada frame
+                    if (!occluding.ContainsKey(rend))
+                    {
+                        Material[] originalMaterials = rend.sharedMaterials;
+                        occluding.Add(rend, originalMaterials);
+
+                        Material[] transparentMaterials = new Material[originalMaterials.Length];
+                        for (int i = 0; i < originalMaterials.Length; i++)
+                            transparentMaterials[i] = GetTransparentCopy(originalMaterials[i]);
+
+                        rend.sharedMaterials = transparentMaterials;
+                    }
                 }
+                
             }
         }
 
