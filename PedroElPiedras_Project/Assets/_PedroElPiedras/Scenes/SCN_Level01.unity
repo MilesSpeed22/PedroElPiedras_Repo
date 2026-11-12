@@ -20249,6 +20249,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6108925481372644128}
     - target: {fileID: 2413283411139313126, guid: 379de9fd09f6bb146a629e7696874999, type: 3}
+      propertyPath: fastFallDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413283411139313126, guid: 379de9fd09f6bb146a629e7696874999, type: 3}
+      propertyPath: platformUnlock
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413283411139313126, guid: 379de9fd09f6bb146a629e7696874999, type: 3}
       propertyPath: PlatformManager
       value: 
       objectReference: {fileID: 1269913971}
@@ -27232,7 +27240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5180091756702666957, guid: 32ab0f8156ac81c40bc80ce7ff25cbd4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3.8999634
+      value: 3.8999023
       objectReference: {fileID: 0}
     - target: {fileID: 5180091756702666957, guid: 32ab0f8156ac81c40bc80ce7ff25cbd4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -27368,7 +27376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7847588599463054858, guid: 32ab0f8156ac81c40bc80ce7ff25cbd4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.399971
+      value: -2.3999634
       objectReference: {fileID: 0}
     - target: {fileID: 8097965413022147987, guid: 32ab0f8156ac81c40bc80ce7ff25cbd4, type: 3}
       propertyPath: m_AnchoredPosition.y
