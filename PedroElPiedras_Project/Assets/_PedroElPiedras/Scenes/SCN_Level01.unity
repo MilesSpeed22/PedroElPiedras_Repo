@@ -8183,7 +8183,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228699254}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fdefac95a99174d47ae71e795c69a8dd, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -8434,7 +8434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66a65240119302543af4b29edf9619e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -45.89
+      value: -46.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66a65240119302543af4b29edf9619e3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8468,6 +8468,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8188869702214846609, guid: 66a65240119302543af4b29edf9619e3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -7568833324937727474, guid: 66a65240119302543af4b29edf9619e3, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -8483,11 +8487,19 @@ PrefabInstance:
     - target: {fileID: -3812814234407265178, guid: 66a65240119302543af4b29edf9619e3, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 251806586100549411, guid: 66a65240119302543af4b29edf9619e3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 66a65240119302543af4b29edf9619e3, type: 3}
       propertyPath: m_Name
       value: SM_MiniTemplo 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 66a65240119302543af4b29edf9619e3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1197023630438895600, guid: 66a65240119302543af4b29edf9619e3, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -8495,6 +8507,14 @@ PrefabInstance:
     - target: {fileID: 1197023630438895600, guid: 66a65240119302543af4b29edf9619e3, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600901947042898519, guid: 66a65240119302543af4b29edf9619e3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037334301188813533, guid: 66a65240119302543af4b29edf9619e3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18627,6 +18647,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.598
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1f258c574ec7d7d4ebdd46a54adc2f6b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
     - target: {fileID: 919132149155446097, guid: 1f258c574ec7d7d4ebdd46a54adc2f6b, type: 3}
       propertyPath: m_Name
       value: Plataforma2
@@ -22276,6 +22300,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -366.415
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2d542a6b493612740bfc95ca7e7f5490, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
     - target: {fileID: 919132149155446097, guid: 2d542a6b493612740bfc95ca7e7f5490, type: 3}
       propertyPath: m_Name
       value: Plataforma3 (1)
@@ -29627,6 +29655,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -70.028
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: af09306ea577e9c4a94a8ef315881b33, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
     - target: {fileID: 919132149155446097, guid: af09306ea577e9c4a94a8ef315881b33, type: 3}
       propertyPath: m_Name
       value: Plataforma1 1
@@ -32314,6 +32346,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1f258c574ec7d7d4ebdd46a54adc2f6b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
     - target: {fileID: 919132149155446097, guid: 1f258c574ec7d7d4ebdd46a54adc2f6b, type: 3}
       propertyPath: m_Name
       value: Plataforma2
@@ -33969,6 +34005,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2d542a6b493612740bfc95ca7e7f5490, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
     - target: {fileID: 919132149155446097, guid: 2d542a6b493612740bfc95ca7e7f5490, type: 3}
       propertyPath: m_Name
       value: Plataforma3
@@ -36719,6 +36759,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.356
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: af09306ea577e9c4a94a8ef315881b33, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
     - target: {fileID: 919132149155446097, guid: af09306ea577e9c4a94a8ef315881b33, type: 3}
       propertyPath: m_Name
       value: Plataforma1 1
@@ -40216,6 +40260,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 177.149
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1f258c574ec7d7d4ebdd46a54adc2f6b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
     - target: {fileID: 919132149155446097, guid: 1f258c574ec7d7d4ebdd46a54adc2f6b, type: 3}
       propertyPath: m_Name
       value: Plataforma2
@@ -40516,6 +40564,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1f258c574ec7d7d4ebdd46a54adc2f6b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
     - target: {fileID: 919132149155446097, guid: 1f258c574ec7d7d4ebdd46a54adc2f6b, type: 3}
       propertyPath: m_Name
       value: Plataforma2
@@ -40752,6 +40804,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -184.785
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2d542a6b493612740bfc95ca7e7f5490, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
     - target: {fileID: 919132149155446097, guid: 2d542a6b493612740bfc95ca7e7f5490, type: 3}
       propertyPath: m_Name
       value: Plataforma3 (1)
@@ -41767,6 +41823,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2d542a6b493612740bfc95ca7e7f5490, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
     - target: {fileID: 919132149155446097, guid: 2d542a6b493612740bfc95ca7e7f5490, type: 3}
       propertyPath: m_Name
       value: Plataforma3
@@ -42284,6 +42344,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -241.048
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2d542a6b493612740bfc95ca7e7f5490, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed3f2f42007ade742a1408473da61e50, type: 2}
     - target: {fileID: 919132149155446097, guid: 2d542a6b493612740bfc95ca7e7f5490, type: 3}
       propertyPath: m_Name
       value: Plataforma3
