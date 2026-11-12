@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: cc619ff707391ce498039b14df967112
+guid: 2d82277fa0274cf4b85376141361f86a
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_MiniTemplo
+    second: {fileID: 2100000, guid: a1c7eda3ffbe9f14b9d77528a64300b1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
