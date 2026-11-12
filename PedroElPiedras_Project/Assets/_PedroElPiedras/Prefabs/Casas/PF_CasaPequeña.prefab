@@ -436,6 +436,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -755582726368422587, guid: 4cf57c2bb2876644c8d89781c4971e75, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d33a88100fd861a458fd2f0c5eede01c, type: 2}
+    - target: {fileID: 157214157940326074, guid: 4cf57c2bb2876644c8d89781c4971e75, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e9ec2cd1374479a40a89e8d35f232fc5, type: 2}
     - target: {fileID: 919132149155446097, guid: 4cf57c2bb2876644c8d89781c4971e75, type: 3}
       propertyPath: m_Name
       value: Puerta
@@ -456,6 +464,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8587415268353694061, guid: 4cf57c2bb2876644c8d89781c4971e75, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d33a88100fd861a458fd2f0c5eede01c, type: 2}
     - target: {fileID: 8660121463301900489, guid: 4cf57c2bb2876644c8d89781c4971e75, type: 3}
       propertyPath: m_Layer
       value: 9
