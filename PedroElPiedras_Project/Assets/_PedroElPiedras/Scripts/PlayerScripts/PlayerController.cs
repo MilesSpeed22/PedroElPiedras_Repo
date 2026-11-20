@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
     public int tutoNum;
 
     [Header("Agarrarse a bordes")]
-    [SerializeField] private LayerMask ledgeWallLayer;
+    [SerializeField] private LayerMask ledgeLayer;
 
     [SerializeField] private float wallCheckDistance = 0.8f;
     [SerializeField] private float chestHeight = 1.2f;
@@ -92,8 +92,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 climbPosition;
     private Vector3 ledgeNormal;
 
-    //MenuPausa
+    public float ledgeJumpForce = 20f;
 
+    [Header("Menu de Pausa")]
     public GameObject menuPausa;
     public GameObject barraVida;
     public GameObject bolasPoderes;
@@ -177,7 +178,8 @@ public class PlayerController : MonoBehaviour
         {
             if (isHanging)
             {
-                StartCoroutine(ClimbLedge());
+                LedgeJump();
+                //StartCoroutine(ClimbLedge());
                 return;
             }
 
@@ -463,13 +465,13 @@ public class PlayerController : MonoBehaviour
 
         Vector3 wallOrigin = transform.position + Vector3.up * chestHeight;
 
-        if (Physics.Raycast(wallOrigin, transform.forward, out RaycastHit wallHit, wallCheckDistance, ledgeWallLayer))
+        if (Physics.Raycast(wallOrigin, transform.forward, out RaycastHit wallHit, wallCheckDistance, ledgeLayer))
         {
             Debug.Log("Wall Detected");
             Vector3 topOrigin = wallHit.point - wallHit.normal * topProbeForward + Vector3.up * ledgeCheckDistance;
             Debug.DrawRay(topOrigin, Vector3.down * (ledgeCheckDistance + 0.5f), Color.green);
 
-            if (Physics.Raycast(topOrigin, Vector3.down, out RaycastHit topHit, ledgeCheckDistance + 0.5f, groundLayer))
+            if (Physics.Raycast(topOrigin, Vector3.down, out RaycastHit topHit, ledgeCheckDistance + 0.5f, ledgeLayer))
             {
                 Debug.Log("Top surface detected");
                 Debug.Log("Surface: " + topHit.collider.name);
@@ -536,37 +538,19 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(LedgeCooldown());
     }
 
-    IEnumerator ClimbLedge()
+    private void LedgeJump()
     {
-        isClimbing = true;
         isHanging = false;
-
-        rb.linearVelocity = Vector3.zero;
-        rb.isKinematic = true;
-
-        moveInput = Vector2.zero;
-
-        animator.SetBool("isHanging", false);
-        //animator.SetBool("isClimbing", true);
-
-        while (Vector3.Distance(transform.position, climbPosition) > 0.05f)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, climbPosition, climbSpeed * Time.deltaTime);
-
-            yield return null;
-        }
-
-        transform.position = climbPosition;
 
         rb.isKinematic = false;
         rb.useGravity = true;
 
-        isClimbing = false;
-        //animator.SetBool("isClimbing", false);
+        animator.SetBool("isHanging", false);
+        animator.SetBool("isJumping", true);
 
-        isHanging = false;
+        rb.linearVelocity = Vector3.up * ledgeJumpForce;
 
-        StartCoroutine(LedgeCooldown());
+        hasJumped = true;
     }
 
     private IEnumerator LedgeCooldown()
