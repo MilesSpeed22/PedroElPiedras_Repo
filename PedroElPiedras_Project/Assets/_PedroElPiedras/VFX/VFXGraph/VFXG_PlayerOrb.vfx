@@ -113,15 +113,6 @@ MonoBehaviour:
     - model: {fileID: 8926484042661617618}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661617668}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661617657}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661617691}
-      id: 0
-      isStickyNote: 0
   - title: ARO
     position:
       serializedVersion: 2
@@ -178,15 +169,6 @@ MonoBehaviour:
     - model: {fileID: 8926484042661617817}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661617706}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661617713}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661617716}
-      id: 0
-      isStickyNote: 0
   stickyNoteInfos: []
   categories: []
   uiBounds:
@@ -205,7 +187,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: VFX_PlayerOrb
+  m_Name: VFXG_PlayerOrb
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 0}
@@ -344,7 +326,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VFX_PlayerOrb
+  m_Name: VFXG_PlayerOrb
   m_Graph: {fileID: 114350483966674976}
   m_Infos:
     m_RendererSettings:
