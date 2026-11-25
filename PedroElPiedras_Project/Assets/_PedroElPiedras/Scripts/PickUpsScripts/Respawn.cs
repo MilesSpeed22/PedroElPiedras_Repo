@@ -7,7 +7,7 @@ public class Respawn : MonoBehaviour
     //public GameObject refRespawn;
     [SerializeField] int numRespawn;
     Material mat;
-    [SerializeField] Renderer rend;
+    Renderer rend;
     [SerializeField] float lerpTime = 1.5f;
     [SerializeField] Material emissiveMat;
     [SerializeField] Material baseMat;
@@ -20,6 +20,7 @@ public class Respawn : MonoBehaviour
         rend = GetComponentInChildren < Renderer>();
         mat = baseMat;
         emColor = new Color(191f / 255f, 168f / 255f, 66f / 255f, 1f);
+        anim = GetComponent<Animator>();
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -297,8 +297,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a07a2154a67b7e4db090912689d9182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Respawn
-  refRespawn: {fileID: 0}
   numRespawn: 0
+  rend: {fileID: 0}
+  lerpTime: 1.5
+  emissiveMat: {fileID: 2100000, guid: b4b27744a4f562b459305eab843d455d, type: 2}
+  baseMat: {fileID: 2100000, guid: 7e5d9af725c77fe4d815dd37db81f48f, type: 2}
 --- !u!65 &7660296216406677211
 BoxCollider:
   m_ObjectHideFlags: 0
