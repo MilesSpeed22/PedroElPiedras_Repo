@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using Unity.Cinemachine;
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -69,19 +71,40 @@ public class PlayerController : MonoBehaviour
     public GameObject[] tutoriales;
     public int tutoNum;
 
-    //MenuPausa
+    [Header("Agarrarse a bordes")]
+    [SerializeField] private LayerMask ledgeLayer;
 
+    [SerializeField] private float wallCheckDistance = 0.8f;
+    [SerializeField] private float chestHeight = 1.2f;
+    [SerializeField] private float ledgeCheckDistance = 2f;
+    [SerializeField] private float topProbeForward = 0.5f;
+    [SerializeField] private float hangDrop = 1.4f;
+    [SerializeField] private float hangOffset = 0.15f;
+    [SerializeField] private float climbSpeed = 4f;
+    [SerializeField] private CapsuleCollider playerCollider;
+    public float ledgeGrabCooldown = 0.5f;
+    private bool canGrabLedge = true;
+
+    private bool isHanging;
+    private bool isClimbing;
+
+    private Vector3 hangPosition;
+    private Vector3 climbPosition;
+    private Vector3 ledgeNormal;
+
+    public float ledgeJumpForce = 20f;
+
+    [Header("Menu de Pausa")]
     public GameObject menuPausa;
     public GameObject barraVida;
     public GameObject bolasPoderes;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
@@ -107,6 +130,23 @@ public class PlayerController : MonoBehaviour
             fallingTimer = 0f;
         }
 
+        if (!isHanging && !isClimbing)
+        {
+            CheckForLedge();
+        }
+
+        if (isHanging)
+        {
+            animator.SetBool("isFalling", false);
+            animator.SetBool("isFastFalling", false);
+
+            if (moveInput.y < -0.5f) DropLedge();
+
+            return;
+        }
+
+        if (isClimbing) return;
+
         bool isFastFalling = isFalling && fallingTimer >= fastFallDelay;
 
         animator.SetBool("isFalling", isFalling);
@@ -116,10 +156,8 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-      
-         Movimiento();
-        
-        
+        if (isHanging || isClimbing) return;
+        Movimiento();       
         UpdateAnimations();
     }
     
@@ -127,7 +165,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     { 
-        if(puedeMoverse == true)
+        if(puedeMoverse && !isClimbing)
         {
             moveInput = context.ReadValue<Vector2>();
         }
@@ -138,8 +176,18 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Jump();
-            hasJumped = true;
+            if (isHanging)
+            {
+                LedgeJump();
+                //StartCoroutine(ClimbLedge());
+                return;
+            }
+
+            if (!isClimbing)
+            {
+                Jump();
+                hasJumped = true;
+            }
         }
     }
     public void OnDash(InputAction.CallbackContext context)
@@ -180,6 +228,7 @@ public class PlayerController : MonoBehaviour
     private void Movimiento()
     {
         if (Camera.main == null) return;
+        if (isHanging || isClimbing) return;
 
         Vector3 camForward = Camera.main.transform.forward;
         Vector3 camRight = Camera.main.transform.right;
@@ -389,6 +438,13 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAnimations()
     {
+        if (isHanging || isClimbing)
+        {
+            animator.SetBool("isWalking", false);
+            animator.SetBool("isRunning", false);
+            return;
+        }
+
         Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
 
         float currentSpeed = horizontalVelocity.magnitude;
@@ -397,6 +453,113 @@ public class PlayerController : MonoBehaviour
 
         animator.SetBool("isWalking", moving && currentSpeed < 12f);
         animator.SetBool("isRunning", moving && currentSpeed >= 12f);
+    }
+
+    //Agarrarse a bordes configuraciones
+
+    private void CheckForLedge()
+    {
+        if (!canGrabLedge || isGrounded || isHanging || isClimbing) return;
+
+        if (rb.linearVelocity.y > 0f) return;
+
+        Vector3 wallOrigin = transform.position + Vector3.up * chestHeight;
+
+        if (Physics.Raycast(wallOrigin, transform.forward, out RaycastHit wallHit, wallCheckDistance, ledgeLayer))
+        {
+            Debug.Log("Wall Detected");
+            Vector3 topOrigin = wallHit.point - wallHit.normal * topProbeForward + Vector3.up * ledgeCheckDistance;
+            Debug.DrawRay(topOrigin, Vector3.down * (ledgeCheckDistance + 0.5f), Color.green);
+
+            if (Physics.Raycast(topOrigin, Vector3.down, out RaycastHit topHit, ledgeCheckDistance + 0.5f, ledgeLayer))
+            {
+                Debug.Log("Top surface detected");
+                Debug.Log("Surface: " + topHit.collider.name);
+
+                if (topHit.point.y <= transform.position.y + 0.3f)
+                {
+                    Debug.Log("Platform not high enough");
+                    return;
+                }
+
+                if (Vector3.Angle(topHit.normal, Vector3.up) > 30f) return;
+
+                float safeOffset = playerCollider.radius + 0.05f;
+
+                ledgeNormal = wallHit.normal;
+
+                hangPosition = topHit.point + wallHit.normal * safeOffset + Vector3.down * hangDrop;
+
+                climbPosition = topHit.point - wallHit.normal * 0.6f + Vector3.up * 0.1f;
+
+                GrabLedge();
+
+                Debug.Log("LEdge grabbed");
+            }
+
+            else Debug.Log("Top surface not detected");
+        }
+    }
+
+    private void GrabLedge()
+    {
+        isHanging = true;
+
+        moveInput = Vector2.zero;
+
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        rb.useGravity = false;
+        rb.isKinematic = true;
+
+        rb.position = hangPosition;
+
+        transform.rotation = Quaternion.LookRotation(-ledgeNormal);
+
+        animator.SetBool("isHanging", true);
+        //animator.SetBool("isClimbing", false);
+    }
+
+    private void DropLedge()
+    {
+        isHanging = false;
+
+        rb.isKinematic = false;
+        rb.useGravity = true;
+
+        rb.linearVelocity = Vector3.down * 2f;
+
+        moveInput = Vector2.zero;
+
+        animator.SetBool("isHanging", false);
+        //animator.SetBool("isClimbing", false);
+
+        StartCoroutine(LedgeCooldown());
+    }
+
+    private void LedgeJump()
+    {
+        isHanging = false;
+
+        rb.isKinematic = false;
+        rb.useGravity = true;
+
+        animator.SetBool("isHanging", false);
+        animator.SetBool("isJumping", true);
+
+        rb.linearVelocity = Vector3.up * ledgeJumpForce;
+
+        hasJumped = true;
+    }
+
+    private IEnumerator LedgeCooldown()
+    {
+        canGrabLedge = false;
+
+        yield return new WaitForSeconds(ledgeGrabCooldown);
+
+        canGrabLedge = true;
     }
 
     private void UpdateJumpAnimations()
@@ -461,6 +624,12 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1f;
 
     }
-    
-    
+
+    private void OnDrawGizmos()
+    {
+        Vector3 wallOrigin = transform.position + Vector3.up * chestHeight;
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(wallOrigin,transform.forward * wallCheckDistance);
+    }
+
 }
