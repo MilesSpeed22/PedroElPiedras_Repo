@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8764833353140846740
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ChromaticAberration
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.076
 --- !u!114 &-7572839865908383073
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -17,22 +33,22 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   threshold:
-    m_OverrideState: 0
-    m_Value: 0.9
+    m_OverrideState: 1
+    m_Value: 0.5
   intensity:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 2.5
   scatter:
-    m_OverrideState: 1
-    m_Value: 0.706
+    m_OverrideState: 0
+    m_Value: 0.515
   clamp:
     m_OverrideState: 0
     m_Value: 65472
   tint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.9528302, g: 0.9500522, b: 0.7146226, a: 1}
   highQualityFiltering:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   filter:
     m_OverrideState: 0
@@ -64,13 +80,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ChannelMixer
   active: 1
   redOutRedIn:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 81
   redOutGreenIn:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 7
   redOutBlueIn:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 20
   greenOutRedIn:
     m_OverrideState: 0
@@ -82,14 +98,14 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   blueOutRedIn:
-    m_OverrideState: 0
-    m_Value: -11
+    m_OverrideState: 1
+    m_Value: -7
   blueOutGreenIn:
     m_OverrideState: 1
-    m_Value: -67
+    m_Value: 5
   blueOutBlueIn:
     m_OverrideState: 1
-    m_Value: 111
+    m_Value: 57
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +125,7 @@ MonoBehaviour:
   - {fileID: 8856242866412543087}
   - {fileID: 1619593538740079281}
   - {fileID: -7572839865908383073}
+  - {fileID: -8764833353140846740}
 --- !u!114 &1619593538740079281
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -126,11 +143,11 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
   quality:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.408
+    m_Value: 0.125
   clamp:
     m_OverrideState: 0
     m_Value: 0.05
@@ -146,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
   m_Name: Tonemapping
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.Tonemapping
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 2
@@ -195,7 +212,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.287
+    m_Value: 0.31
   smoothness:
     m_OverrideState: 1
     m_Value: 0.408
@@ -220,16 +237,16 @@ MonoBehaviour:
     m_Value: 1
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 16
+    m_Value: 170
   gaussianEnd:
-    m_OverrideState: 1
-    m_Value: 40
-  gaussianMaxRadius:
     m_OverrideState: 0
-    m_Value: 1.07
-  highQualitySampling:
+    m_Value: 159
+  gaussianMaxRadius:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.5
+  highQualitySampling:
+    m_OverrideState: 0
+    m_Value: 0
   focusDistance:
     m_OverrideState: 0
     m_Value: 10
