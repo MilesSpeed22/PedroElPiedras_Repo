@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _PortalTexture:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 965db03a5e32ddb4ea82d8510a4febff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -55,16 +55,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Opacity: 1
+    - _Opacity: 0.187
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RadialDistorsion: 3
+    - _RadialDistorsion: 1.73
     - _RadialScale: 20
-    - _Speed: 0.742
+    - _Speed: 0.588
     - _TwirlDistorsion: 3
-    - _TwirlScale: 2
-    - _TwirlStrength: 15
+    - _TwirlScale: 3.78
+    - _TwirlStrength: 9.9
     m_Colors:
-    - _Color: {r: 1, g: 0, b: 0.7749448, a: 1}
+    - _Color: {r: 7.129739, g: 4.99688, b: 0.033630922, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

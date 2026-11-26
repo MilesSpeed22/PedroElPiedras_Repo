@@ -258,20 +258,6 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "09ed6e9f5d1241cca786d9b360b7a3c0"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "4678a7db411c41758ac64a61824010e9"
-                },
-                "m_SlotId": 2
-            },
-            "m_InputSlot": {
-                "m_Node": {
                     "m_Id": "7fe0117f03894638bbc362bcb6b76cb4"
                 },
                 "m_SlotId": 3
@@ -629,7 +615,7 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":10300,\"guid\":\"0000000000000000f000000000000000\",\"type\":0}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"965db03a5e32ddb4ea82d8510a4febff\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -2122,7 +2108,7 @@
     "m_Title": "Radial Noise",
     "m_Position": {
         "x": -1618.0001220703125,
-        "y": -233.99996948242188
+        "y": -234.0
     }
 }
 
@@ -2195,9 +2181,9 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "r": 1.0,
-        "g": 1.0,
-        "b": 1.0,
+        "r": 4.0,
+        "g": 1.5207778215408326,
+        "b": 0.0,
         "a": 1.0
     },
     "isMainColor": false,
@@ -3453,7 +3439,7 @@
     "m_Title": "Twirl Noise",
     "m_Position": {
         "x": -1789.0001220703125,
-        "y": -731.0
+        "y": -731.0000610351563
     }
 }
 
