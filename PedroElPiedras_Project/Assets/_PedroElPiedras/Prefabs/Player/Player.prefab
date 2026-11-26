@@ -9165,6 +9165,19 @@ MonoBehaviour:
   tutoriales:
   - {fileID: 0}
   tutoNum: 0
+  ledgeLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  wallCheckDistance: 0.8
+  chestHeight: 1.2
+  ledgeCheckDistance: 2
+  topProbeForward: 0.5
+  hangDrop: 1.4
+  hangOffset: 0.15
+  climbSpeed: 4
+  playerCollider: {fileID: 0}
+  ledgeGrabCooldown: 0.5
+  ledgeJumpForce: 20
   menuPausa: {fileID: 0}
   barraVida: {fileID: 0}
   bolasPoderes: {fileID: 0}

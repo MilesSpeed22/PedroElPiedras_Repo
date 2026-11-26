@@ -179,7 +179,6 @@ public class PlayerController : MonoBehaviour
             if (isHanging)
             {
                 LedgeJump();
-                //StartCoroutine(ClimbLedge());
                 return;
             }
 
