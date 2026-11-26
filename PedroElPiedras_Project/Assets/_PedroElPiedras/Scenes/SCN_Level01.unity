@@ -5773,7 +5773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &832575518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7495,6 +7495,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11bf271b4d78fe343a0a9d0bb7d40d5f, type: 3}
   m_PrefabInstance: {fileID: 1438689044147275443}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1073043697
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 215859825552817123, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_Name
+      value: PF_Global Volume Pospro
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171988883218025531, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.44407
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171988883218025531, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.95706
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171988883218025531, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.69775
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171988883218025531, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171988883218025531, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171988883218025531, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171988883218025531, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171988883218025531, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171988883218025531, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171988883218025531, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041884911085212484, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a96a15803ab5b3d44a8c37889c184061, type: 3}
 --- !u!1001 &1086438137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15714,6 +15775,7 @@ MonoBehaviour:
   platformNum: 7
   platPosformNum: 7
   numInstanRef: 7
+  orbeReferencia: {fileID: 0}
 --- !u!4 &188389082803567419
 Transform:
   m_ObjectHideFlags: 0
@@ -16884,6 +16946,7 @@ MonoBehaviour:
   platformNum: 6
   platPosformNum: 6
   numInstanRef: 6
+  orbeReferencia: {fileID: 0}
 --- !u!4 &823734525354397140
 Transform:
   m_ObjectHideFlags: 0
@@ -17242,6 +17305,7 @@ MonoBehaviour:
   platformNum: 0
   platPosformNum: 0
   numInstanRef: 0
+  orbeReferencia: {fileID: 0}
 --- !u!4 &923850206122217129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2689209326486801076, guid: 379de9fd09f6bb146a629e7696874999, type: 3}
@@ -17595,6 +17659,8 @@ MonoBehaviour:
   manager: {fileID: 1269913972}
   canMove: 1
   audioManager: {fileID: 7007915820466526012}
+  orbActivatedSize: 0
+  platformManager: {fileID: 0}
   yaActivada: 0
 --- !u!1001 &1186039944339361444
 PrefabInstance:
@@ -18147,6 +18213,8 @@ MonoBehaviour:
   manager: {fileID: 1269913972}
   canMove: 1
   audioManager: {fileID: 5436412928204898190}
+  orbActivatedSize: 0
+  platformManager: {fileID: 0}
   yaActivada: 0
 --- !u!23 &1318488426701209787
 MeshRenderer:
@@ -24416,6 +24484,8 @@ MonoBehaviour:
   manager: {fileID: 1269913972}
   canMove: 1
   audioManager: {fileID: 1677802705393597705}
+  orbActivatedSize: 0
+  platformManager: {fileID: 0}
   yaActivada: 0
 --- !u!1001 &3521850615423701433
 PrefabInstance:
@@ -25776,6 +25846,7 @@ MonoBehaviour:
   platformNum: 4
   platPosformNum: 4
   numInstanRef: 4
+  orbeReferencia: {fileID: 0}
 --- !u!4 &3956444771539712670
 Transform:
   m_ObjectHideFlags: 0
@@ -27219,6 +27290,8 @@ MonoBehaviour:
   manager: {fileID: 1269913972}
   canMove: 1
   audioManager: {fileID: 5105173067371439681}
+  orbActivatedSize: 0
+  platformManager: {fileID: 0}
   yaActivada: 0
 --- !u!1001 &4367398374298482942
 PrefabInstance:
@@ -27314,6 +27387,8 @@ MonoBehaviour:
   manager: {fileID: 1269913972}
   canMove: 1
   audioManager: {fileID: 3869396441004012436}
+  orbActivatedSize: 0
+  platformManager: {fileID: 0}
   yaActivada: 0
 --- !u!4 &4384906388459086643
 Transform:
@@ -27660,6 +27735,7 @@ MonoBehaviour:
   platformNum: 2
   platPosformNum: 2
   numInstanRef: 2
+  orbeReferencia: {fileID: 0}
 --- !u!23 &4456408276262304562
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28885,6 +28961,7 @@ MonoBehaviour:
   platformNum: 3
   platPosformNum: 3
   numInstanRef: 3
+  orbeReferencia: {fileID: 0}
 --- !u!114 &4867478963156518574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30008,6 +30085,7 @@ MonoBehaviour:
   platformNum: 5
   platPosformNum: 5
   numInstanRef: 5
+  orbeReferencia: {fileID: 0}
 --- !u!1001 &5163375855952015136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30659,6 +30737,7 @@ MonoBehaviour:
   platformNum: 1
   platPosformNum: 1
   numInstanRef: 1
+  orbeReferencia: {fileID: 0}
 --- !u!4 &5371767062910642905
 Transform:
   m_ObjectHideFlags: 0
@@ -33190,6 +33269,8 @@ MonoBehaviour:
   manager: {fileID: 1269913972}
   canMove: 1
   audioManager: {fileID: 5640362427207938174}
+  orbActivatedSize: 0
+  platformManager: {fileID: 0}
   yaActivada: 0
 --- !u!1001 &6005074072398255182
 PrefabInstance:
@@ -33840,11 +33921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7847588599463054858, guid: 32ab0f8156ac81c40bc80ce7ff25cbd4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.3999863
+      value: -2.3999557
       objectReference: {fileID: 0}
     - target: {fileID: 8097965413022147987, guid: 32ab0f8156ac81c40bc80ce7ff25cbd4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.5
+      value: -1.4999924
       objectReference: {fileID: 0}
     - target: {fileID: 9163168098496343287, guid: 32ab0f8156ac81c40bc80ce7ff25cbd4, type: 3}
       propertyPath: m_IsActive
@@ -40364,6 +40445,8 @@ MonoBehaviour:
   manager: {fileID: 1269913972}
   canMove: 1
   audioManager: {fileID: 5831206483556809829}
+  orbActivatedSize: 0
+  platformManager: {fileID: 0}
   yaActivada: 0
 --- !u!33 &8230473917151232347
 MeshFilter:
@@ -41417,6 +41500,8 @@ MonoBehaviour:
   manager: {fileID: 1269913972}
   canMove: 1
   audioManager: {fileID: 4149633642405618393}
+  orbActivatedSize: 0
+  platformManager: {fileID: 0}
   yaActivada: 0
 --- !u!1001 &8631096856993828978
 PrefabInstance:
@@ -44320,6 +44405,7 @@ SceneRoots:
   - {fileID: 4038703115174167879}
   - {fileID: 110319345}
   - {fileID: 6108925481372644127}
+  - {fileID: 1073043697}
   - {fileID: 832575519}
   - {fileID: 1269913973}
   - {fileID: 1461147120}
