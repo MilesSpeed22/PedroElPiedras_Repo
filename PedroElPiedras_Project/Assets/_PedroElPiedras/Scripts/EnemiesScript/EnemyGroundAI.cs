@@ -9,6 +9,7 @@ public class EnemyGroundAI : MonoBehaviour
     private Transform player;
     private bool follow = false;
     bool canAttack;
+    public GameObject attack;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,11 +46,14 @@ public class EnemyGroundAI : MonoBehaviour
 
     public void Attack()
     {
-      
+        attack.SetActive(true);
   
     }
 
-    
+    public void ResetAttack()
+    {
+        attack.SetActive(false);
+    }
     IEnumerator CanAttackCC()
     {
         canAttack = true;
