@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.VFX;
 
 public class MovimientoLerp : MonoBehaviour
 {
@@ -27,6 +28,13 @@ public class MovimientoLerp : MonoBehaviour
     [SerializeField] public bool canMove = true;
 
     public AudioPlataforma audioManager;
+
+    [Header("OrbeReferencia")]
+    VisualEffect orb;
+    [SerializeField] float orbActivatedSize;
+    float initialOrbSize;
+    [SerializeField] PlatformManager platformManager;
+
 
     // Impide reutilizar esta plataforma.
     [SerializeField] private bool yaActivada = false;
@@ -79,6 +87,13 @@ public class MovimientoLerp : MonoBehaviour
 
     private IEnumerator CicloMovimiento()
     {
+        orb = platformManager.instanRef[platformManager.numInstanRef].GetComponent<VisualEffect>();
+        if (orb != null)
+        {
+            initialOrbSize = orb.GetFloat("Size");
+            orb.SetFloat("Size", orbActivatedSize);
+        }
+
         rotacionInicial = transform.rotation;
 
         Quaternion destinoRotacion =
@@ -114,7 +129,13 @@ public class MovimientoLerp : MonoBehaviour
                 rotacionInicial
             )
         );
-        
+
+        if (orb != null)
+        {
+            orb.SetFloat("Size", initialOrbSize);
+        }
+        orb = null;
+
         // La plataforma ya ha regresado: puede activarse otra vez.
         yaActivada = false;
         canMove = true;

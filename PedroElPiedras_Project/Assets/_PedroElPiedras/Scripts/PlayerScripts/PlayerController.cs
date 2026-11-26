@@ -9,6 +9,7 @@ using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
+    #region Variables
     public PlayerInput playerInput;
     public AudioManager audioManager;
     public Rigidbody rb;
@@ -98,6 +99,8 @@ public class PlayerController : MonoBehaviour
     public GameObject menuPausa;
     public GameObject barraVida;
     public GameObject bolasPoderes;
+
+    #endregion
 
     void Start()
     {

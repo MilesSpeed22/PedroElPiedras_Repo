@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class PlatformInvoque01 : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class PlatformInvoque01 : MonoBehaviour
     [SerializeField] private int platformNum;
     [SerializeField] private int platPosformNum;
     [SerializeField] private int numInstanRef;
+
+    //vfx
+    public VisualEffect orbeReferencia;
 
     private void OnTriggerStay(Collider other)
     {
@@ -29,6 +33,8 @@ public class PlatformInvoque01 : MonoBehaviour
             if(other.GetComponent<PlayerController>().platformUnlock == true)
             {
                 platformManager.instanRef[numInstanRef].SetActive(true);
+                orbeReferencia = platformManager.instanRef[numInstanRef].GetComponent<VisualEffect>();
+            
             }
             
         }
