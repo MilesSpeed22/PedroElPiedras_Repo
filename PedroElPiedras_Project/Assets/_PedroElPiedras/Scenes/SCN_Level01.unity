@@ -28487,6 +28487,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2689209326486801076, guid: 379de9fd09f6bb146a629e7696874999, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6252255093731859572, guid: 379de9fd09f6bb146a629e7696874999, type: 3}
       propertyPath: m_Name
       value: Player
@@ -36091,7 +36095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7847588599463054858, guid: 32ab0f8156ac81c40bc80ce7ff25cbd4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.3999863
+      value: -2.3999634
       objectReference: {fileID: 0}
     - target: {fileID: 8097965413022147987, guid: 32ab0f8156ac81c40bc80ce7ff25cbd4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -43139,6 +43143,19 @@ MonoBehaviour:
   enemyTarget: {fileID: 0}
   tutoriales: []
   tutoNum: 0
+  ledgeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  wallCheckDistance: 0.8
+  chestHeight: 1.2
+  ledgeCheckDistance: 2
+  topProbeForward: 0.5
+  hangDrop: 1.4
+  hangOffset: 0.15
+  climbSpeed: 4
+  playerCollider: {fileID: 0}
+  ledgeGrabCooldown: 0.5
+  ledgeJumpForce: 20
   menuPausa: {fileID: 0}
   barraVida: {fileID: 0}
   bolasPoderes: {fileID: 0}

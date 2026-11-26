@@ -99,6 +99,10 @@ public class PlayerController : MonoBehaviour
     public GameObject barraVida;
     public GameObject bolasPoderes;
 
+    [Header("Particulas")]
+    public ParticleSystem landParticles;
+    private bool wasGrounded;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -107,6 +111,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
+        if (isGrounded && !wasGrounded)
+        {
+            landParticles.Play();
+        }
+        wasGrounded = isGrounded;
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
         if (isGrounded)
         {
@@ -293,7 +304,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded || doubleJump)
         {
-           rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
             animator.SetTrigger("isJumping");
             doubleJump = false;
             audioManager.PlaySFX(0);
@@ -466,18 +477,13 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(wallOrigin, transform.forward, out RaycastHit wallHit, wallCheckDistance, ledgeLayer))
         {
-            Debug.Log("Wall Detected");
             Vector3 topOrigin = wallHit.point - wallHit.normal * topProbeForward + Vector3.up * ledgeCheckDistance;
-            Debug.DrawRay(topOrigin, Vector3.down * (ledgeCheckDistance + 0.5f), Color.green);
 
             if (Physics.Raycast(topOrigin, Vector3.down, out RaycastHit topHit, ledgeCheckDistance + 0.5f, ledgeLayer))
             {
-                Debug.Log("Top surface detected");
-                Debug.Log("Surface: " + topHit.collider.name);
 
                 if (topHit.point.y <= transform.position.y + 0.3f)
                 {
-                    Debug.Log("Platform not high enough");
                     return;
                 }
 
@@ -492,11 +498,7 @@ public class PlayerController : MonoBehaviour
                 climbPosition = topHit.point - wallHit.normal * 0.6f + Vector3.up * 0.1f;
 
                 GrabLedge();
-
-                Debug.Log("LEdge grabbed");
             }
-
-            else Debug.Log("Top surface not detected");
         }
     }
 
@@ -517,7 +519,6 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(-ledgeNormal);
 
         animator.SetBool("isHanging", true);
-        //animator.SetBool("isClimbing", false);
     }
 
     private void DropLedge()
@@ -532,7 +533,6 @@ public class PlayerController : MonoBehaviour
         moveInput = Vector2.zero;
 
         animator.SetBool("isHanging", false);
-        //animator.SetBool("isClimbing", false);
 
         StartCoroutine(LedgeCooldown());
     }
