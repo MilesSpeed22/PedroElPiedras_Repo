@@ -30,7 +30,7 @@ public class EnemyGroundAI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             follow = true;
-            Attack();
+            
         }
     }
 
@@ -46,17 +46,10 @@ public class EnemyGroundAI : MonoBehaviour
     public void Attack()
     {
       
-        
-        anim.SetBool("Attack", true);
-        StartCoroutine(IDLE());
-       
+  
     }
 
-    IEnumerator IDLE()
-    {
-        yield return new WaitForSeconds(1);
-        anim.SetBool("Attack", false);
-    }
+    
     IEnumerator CanAttackCC()
     {
         canAttack = true;

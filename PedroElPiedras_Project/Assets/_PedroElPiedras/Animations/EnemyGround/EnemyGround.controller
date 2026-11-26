@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8599416719579265678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90f489ccbbe6494697f11103b68f4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!114 &-4887251719771568173
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,7 +63,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: -2363793907192867686}
   m_StateMachineBehaviours:
-  - {fileID: 6036729780213372245}
+  - {fileID: -8599416719579265678}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -77,6 +89,12 @@ AnimatorController:
   m_AnimatorParameters:
   - m_Name: Attack
     m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: AttackNum
+    m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -108,7 +126,7 @@ AnimatorStateMachine:
     m_Position: {x: 270, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2329408265974271089}
-    m_Position: {x: 570, y: 110, z: 0}
+    m_Position: {x: 520, y: 110, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -131,8 +149,7 @@ AnimatorState:
   m_CycleOffset: 1
   m_Transitions:
   - {fileID: 3954175992563719916}
-  m_StateMachineBehaviours:
-  - {fileID: -4887251719771568173}
+  m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -157,6 +174,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: Attack
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: AttackNum
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2329408265974271089}
