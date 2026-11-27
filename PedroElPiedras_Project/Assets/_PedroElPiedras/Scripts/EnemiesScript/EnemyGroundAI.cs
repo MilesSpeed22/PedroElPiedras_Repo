@@ -11,7 +11,10 @@ public class EnemyGroundAI : MonoBehaviour
     private bool follow = false;
     bool canAttack;
     public GameObject attackCol;
-    public float dashForce = 15f;
+    public float dashForce = 30f;
+    public float dashDistance = 10f;
+    private Vector3 startPosition;
+    private bool isDashing;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,10 +32,22 @@ public class EnemyGroundAI : MonoBehaviour
         }
         
     }
+    private void FixedUpdate()
+    {
+        if (isDashing)
+        {
+            float distance = Vector3.Distance(startPosition, rb.position);
 
+            if (distance >= dashDistance)
+            {
+                rb.linearVelocity = Vector3.zero;
+                isDashing = false;
+            }
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isDashing)
         {
             follow = true;
         }
@@ -49,16 +64,32 @@ public class EnemyGroundAI : MonoBehaviour
 
     public void Attack()
     {
+        if (isDashing) return;
+
         follow = false;
         attackCol.SetActive(true);
-        rb.AddForce(transform.forward * dashForce, ForceMode.Impulse);
+        isDashing = true;
+       
+
+        //guardar la direccion hacia la que mira
+        Vector3 direction = transform.forward;
+        //desactivar navmesh
+        agent.enabled = false;
+        rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+
+        startPosition = rb.position;
+        
+        rb.AddForce(transform.forward * dashForce, ForceMode.VelocityChange);
   
     }
 
     public void ResetAttack()
     {
+        rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+        agent.enabled = true;
+        agent.Warp(transform.position);
         agent.ResetPath();
-        //attackCol.SetActive(false);
+        attackCol.SetActive(false);
     }
     IEnumerator CanAttackCC()
     {
