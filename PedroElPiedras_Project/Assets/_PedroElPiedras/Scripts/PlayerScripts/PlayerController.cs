@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
+using UnityEngine.VFX;
 
 public class PlayerController : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed = 30f;
     public float timeDash;
     public bool canDash = true;
+    public VisualEffect dashVFX;
     //Platform
     [Header("Plataforma")]
     public GameObject PlatformManager;
@@ -332,6 +334,7 @@ public class PlayerController : MonoBehaviour
             canDash = false;
             StartCoroutine(CanDashCC());
             audioManager.PlaySFX(1);
+            dashVFX.Play();
         }
         
     }
