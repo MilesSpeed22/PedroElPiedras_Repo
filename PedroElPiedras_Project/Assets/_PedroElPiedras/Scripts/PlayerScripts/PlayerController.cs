@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     { 
-        if(puedeMoverse && !isClimbing)
+        if (puedeMoverse && !isClimbing)
         {
             moveInput = context.ReadValue<Vector2>();
         }
