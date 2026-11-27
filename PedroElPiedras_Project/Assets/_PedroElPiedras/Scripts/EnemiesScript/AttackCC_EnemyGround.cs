@@ -5,8 +5,8 @@ public class AttackCC_EnemyGround : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        // animator.GetComponent<EnemyGroundAI>().StartCoroutine("CanAttackCC");
-        animator.GetComponentInParent<EnemyGroundAI>().StartCoroutine("CanAttackCC");
+        animator.GetComponent<EnemyGroundAI>().StartCoroutine("CanAttackCC");
+        //animator.GetComponentInParent<EnemyGroundAI>().StartCoroutine("CanAttackCC");
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
