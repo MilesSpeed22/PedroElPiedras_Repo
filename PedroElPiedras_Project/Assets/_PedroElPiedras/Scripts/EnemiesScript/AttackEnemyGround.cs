@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AttackEnemyGround : MonoBehaviour
 {
-    public float fuerzaEmpuje = 50f;
+    public float fuerzaEmpuje = 80f;
     public Vidas vidas;
     public PlayerController playerController;
     public GameObject player;
@@ -23,7 +23,7 @@ public class AttackEnemyGround : MonoBehaviour
             if (vidas.vida > 0)
             {
                 Rigidbody rb = player.GetComponent<Rigidbody>();
-
+                Debug.Log("golpea");
                 if (player != null)
                 {
                     Vector3 direccion = (player.transform.position - transform.position).normalized;

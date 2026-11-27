@@ -6,14 +6,17 @@ public class EnemyGroundAI : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Animator anim;
+    Rigidbody rb;
     private Transform player;
     private bool follow = false;
     bool canAttack;
-    public GameObject attack;
+    public GameObject attackCol;
+    public float dashForce = 15f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -22,16 +25,16 @@ public class EnemyGroundAI : MonoBehaviour
         if (follow)
         {
             agent.SetDestination(player.position);
+            anim.SetBool("Walk", true);
         }
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             follow = true;
-            
         }
     }
 
@@ -46,18 +49,21 @@ public class EnemyGroundAI : MonoBehaviour
 
     public void Attack()
     {
-        attack.SetActive(true);
+        follow = false;
+        attackCol.SetActive(true);
+        rb.AddForce(transform.forward * dashForce, ForceMode.Impulse);
   
     }
 
     public void ResetAttack()
     {
-        attack.SetActive(false);
+        agent.ResetPath();
+        //attackCol.SetActive(false);
     }
     IEnumerator CanAttackCC()
     {
-        canAttack = true;
-        yield return new WaitForSeconds(1);
-        canAttack = false;
+        yield return new WaitForSeconds(2f);
+        anim.SetBool("Walk", false);
+        anim.SetTrigger("Attack");
     }
 }
