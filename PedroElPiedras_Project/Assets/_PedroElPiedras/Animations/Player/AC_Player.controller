@@ -60,7 +60,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: horizontalSpeed
-    m_EventTreshold: 0
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6078142785791271345}
   m_Solo: 0
@@ -235,7 +235,7 @@ AnimatorStateTransition:
   m_TransitionOffset: 0
   m_ExitTime: 0.5
   m_HasExitTime: 0
-  m_HasFixedDuration: 1
+  m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
@@ -811,7 +811,7 @@ AnimatorStateMachine:
     m_Position: {x: 130, y: -70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5034389964670432323}
-    m_Position: {x: 920, y: 50, z: 0}
+    m_Position: {x: 910, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -843855564133740059}
     m_Position: {x: 280, y: 260, z: 0}
@@ -847,7 +847,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: isFalling
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4513178277928113160}
   m_Solo: 0
@@ -857,8 +860,8 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.5
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
@@ -897,7 +900,7 @@ BlendTree:
   m_Childs:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 4ad1b9fe2b4af6347bb93d4dbfc508fe, type: 2}
-    m_Threshold: 0.1
+    m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -905,7 +908,7 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 33e23134059be58498f00ae5a5956a59, type: 2}
-    m_Threshold: 1
+    m_Threshold: 15
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -913,8 +916,8 @@ BlendTree:
     m_Mirror: 0
   m_BlendParameter: horizontalSpeed
   m_BlendParameterY: verticalSpeed
-  m_MinThreshold: 0.1
-  m_MaxThreshold: 1
+  m_MinThreshold: 0
+  m_MaxThreshold: 15
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
