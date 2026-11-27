@@ -164,6 +164,10 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isFastFalling", isFastFalling);
        
         UpdateJumpAnimations();
+
+        Vector3 horizontalVelocity = rb.linearVelocity;
+        horizontalVelocity.y = 0f;
+        animator.SetFloat("horizontalSpeed", horizontalVelocity.magnitude);
     }
     private void FixedUpdate()
     {
