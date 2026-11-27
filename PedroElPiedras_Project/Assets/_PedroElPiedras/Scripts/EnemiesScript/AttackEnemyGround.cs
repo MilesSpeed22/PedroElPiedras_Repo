@@ -16,6 +16,7 @@ public class AttackEnemyGround : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("golpea");
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             Vidas playerVidas = collision.gameObject.GetComponent<Vidas>();
             playerVidas.Golpeado(1);
